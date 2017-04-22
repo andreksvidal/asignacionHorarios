@@ -19,12 +19,9 @@ public class AsignacionHorario {
 
     public AsignacionHorario(ArrayList<FranjaHoraria> franjasHorario, Curso curso) {
         this.franjasHorario = franjasHorario;
-        this.curso = curso;
-        
-       
+        this.curso = curso;             
     }
-
-    
+        
     
     public Curso getCurso() {
         return curso;

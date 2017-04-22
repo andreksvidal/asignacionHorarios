@@ -6,6 +6,7 @@
 package GestorArchivos;
 
 import Agente.AgenteHorario.Curso;
+import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
 import java.util.ArrayList;
 
 /**
@@ -18,14 +19,10 @@ public class Prueba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LectorArchivosHorarios lector = new LectorArchivosHorarios();
         
-        ArrayList <Curso> cursos = lector.leerCursos();
+        GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
         
-        
-        for (Curso curso : cursos) {
-            System.out.println(curso.getNombreCurso());
-        }
+        generador.generarPoblacion(2);
     }
     
 }

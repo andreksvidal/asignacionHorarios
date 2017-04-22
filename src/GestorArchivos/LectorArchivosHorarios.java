@@ -40,7 +40,7 @@ public class LectorArchivosHorarios {
         for (String linea : lineas) {
 
             String[] aux = linea.split(";");
-            Salon salon = new Salon(Integer.parseInt(aux[1]), aux[2], Integer.parseInt(aux[3]));
+            Salon salon = new Salon(Integer.parseInt(aux[0]), aux[1], Integer.parseInt(aux[2]));
             salones.add(salon);
         }
         return salones;

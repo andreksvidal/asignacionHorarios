@@ -8,8 +8,7 @@ package Agente.AgenteHorario;
 import Agente.Agente;
 import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -20,6 +19,7 @@ public class AgenteHorario extends Agente{
     public AgenteHorario(ArrayList<AsignacionHorario> horarios) {        
        memes = horarios;
     }
+    
 
     /****************************************************************************************************/
     /*IMPLEMENTAR ESTOS METODOS ES NECESARIO PARA QUE EL AGENTE PUEDA SER MEJORADO CON LA BUSQUEDA LOCAL*/
@@ -65,8 +65,6 @@ public class AgenteHorario extends Agente{
     private ArrayList<Agente> obtenerVecinos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-
     
     /****************************************************************************************************/
     /*FIN IMPLEMENTACION METODOS NECESARIOS PARA QUE EL AGENTE PUEDA SER MEJORADO CON LA BUSQUEDA LOCAL*/

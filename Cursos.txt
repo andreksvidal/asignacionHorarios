@@ -100,6 +100,6 @@
 100;Fundamentos de Economía;A;4;9;T;25
 101;Gestión Empresarial;A;4;9;T;25
 102;Legislación Laboral;A;4;9;T;35
-103;Trabajo de Grado;A;4;10;T;120
+103;Trabajo de Grado;A;4;10;T;35
 104;Formación ciudadana (para primer semestre);A;4;1;T;30
 105;Pensamiento fotográfico (para primer semestre);B;4;1;T;30

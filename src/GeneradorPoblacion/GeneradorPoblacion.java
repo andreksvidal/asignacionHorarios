@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface GeneradorPoblacion {
  
-    public Agente generarIndivuiduo();
-    public ArrayList<Agente> generarPoblacion();
+
+    public ArrayList<Agente> generarPoblacion(int tamanioPoblacion);
     
 }
