@@ -1,0 +1,105 @@
+1;Cálculo I ;FG;4;1;T;30
+2;Cálculo I;FI;4;1;T;30
+3;Introducción a la Informática;C;4;1;T;25
+4;Cálculo I;FA;4;1;T;30
+5;Cálculo I;FF;4;1;T;30
+6;Introducción a la Informática;A;4;1;T;25
+7;Introducción a la Informática;B;4;1;T;25
+8;Introducción a la Informática;D;4;1;T;25
+9;Introducción a la PIS;A;4;1;T;30
+10;Introducción a la PIS;B;4;1;T;30
+11;Laboratorio de Introducción a la Informática;A;4;1;P;20
+12;Laboratorio de Introducción a la Informática;B;4;1;P;20
+13;Laboratorio de Introducción a la Informática;C;4;1;P;20
+14;Laboratorio de Introducción a la Informática;D;4;1;P;20
+15;Laboratorio de Introducción a la Informática;E;4;1;P;20
+16;Lectura y Escritura;Q;4;1;T;30
+17;Lectura y Escritura;R;4;1;T;30
+18;Álgebra Lineal;FD;4;2;T;10
+19;Laboratorio de Programación Orientada a Objetos;A;4;2;P;20
+20;Laboratorio de Programación Orientada a Objetos;B;4;2;P;20
+21;Laboratorio de Programación Orientada a Objetos;C;4;2;P;20
+22;Laboratorio de Programación Orientada a Objetos;D;4;2;P;20
+23;Álgebra Lineal;I;4;2;T;35
+24;Álgebra Lineal;J;4;2;T;35
+25;Cálculo II;F;4;2;T;40
+26;Cálculo II;FC;4;2;T;30
+27;Laboratorio de Mecánica;FA;4;2;L;15
+28;Laboratorio de Mecánica;FB;4;2;L;15
+29;Laboratorio de Mecánica;N;4;2;L;15
+30;Laboratorio de Mecánica;O;4;2;L;15
+31;Mecánica;FC;4;2;T;40
+32;Mecánica;FD;4;2;T;40
+33;Programación Orientada a Objetos;A;4;2;T;25
+34;Programación Orientada a Objetos;B;4;2;T;25
+35;Programación Orientada a Objetos;C;4;2;T;25
+36;Estructuras de Datos I;B;4;3;T;30
+37;Laboratorio de Estructuras de Datos I  ESTE GRUPO SE CANCELA;C;4;3;P;16
+38;Cálculo III;D;4;3;T;35
+39;Cálculo III;FB;4;3;T;18
+40;Electromagnetismo;FC;4;3;T;35
+41;Electromagnetismo;FD;4;3;T;35
+42;Estructuras de Datos I;A;4;3;T;30
+43;Laboratorio de Electromagnetismo;C;4;3;L;18
+44;Laboratorio de Electromagnetismo;D;4;3;L;18
+45;Laboratorio de Estructuras de Datos I;A;4;3;P;16
+46;Laboratorio de Estructuras de Datos I;B;4;3;P;16
+47;Laboratorio de Estructuras de Datos I;D;4;3;P;16
+48;Bases de Datos I;A;4;4;T;30
+49;Ecuaciones Diferenciales Ordinarias;D;4;4;T;33
+50;Estructura de Datos II;A;4;4;T;35
+51;Laboratorio de Bases de Datos I;A;4;4;P;15
+52;Laboratorio de Bases de Datos I;B;4;4;P;15
+53;Laboratorio de Estructuras de Datos II;A;4;4;P;16
+54;Laboratorio de Estructuras de Datos II;B;4;4;P;16
+55;Vibraciones y Ondas;D;4;4;T;32
+56;Vibraciones y Ondas;E;4;4;T;32
+57;Bases de Datos II;A;4;5;T;20
+58;Bases de Datos II  - Nuevo curso;B;4;5;T;20
+59;Ingeniería de Software I;A;4;5;T;35
+60;Laboratorio de Bases de Datos II;A;4;5;P;17
+61;Laboratorio de Bases de Datos II  - Nuevo Curso;C;4;5;P;17
+62;Laboratorio de Ingeniería de Software I;A;4;5;P;18
+63;Laboratorio de Ingeniería de Software I;B;4;5;P;18
+64;Teoría de la Computación;A;4;5;TP;35
+65;Análisis Numérico;A;4;5;TP;20
+66;Análisis Numérico;B;4;5;TP;15
+67;Arquitectura Computacional;A;4;5;TP;23
+68;Laboratorio de Bases de Datos II;B;4;5;P;17
+69;Estructura de Lenguajes;A;4;6;T;30
+70;Ingeniería de Software II;A;4;6;T;28
+71;Laboratorio de Ingeniería de Software II SE CANCELA ESTE GRUPO;A;4;6;P;12
+72;Laboratorio de Ingeniería de Software II;A;4;6;P;18
+73;Estadística y Probabilidad;FB;4;6;T;35
+74;Laboratorio de Estructura de Lenguajes;A;4;6;P;15
+75;Laboratorio de Estructura de Lenguajes;B;4;6;P;15
+76;Laboratorio de Sistemas Operativos;A;4;6;P;13
+77;Laboratorio de Sistemas Operativos;B;4;6;P;15
+78;Sistemas Operativos;A;4;6;T;33
+79;Ingeniería de Software III;A;4;7;T;30
+80;Inteligencia Artificial;A;4;7;TP;20
+81;Inteligencia Artificial SE CANCELA ESTE GRUPO;B;4;7;TP;20
+82;Laboratorio de Ingeniería de Software III;A;4;7;P;18
+83;Laboratorio de Ingeniería de Software III- SE CANCELA ESTE GRUPO;B;4;7;P;14
+84;Laboratorio de Sistemas Distribuidos SE CANCELA ESTE GRUPO;B;4;7;P;20
+85;Sistemas Distribuidos;A;4;7;T;18
+86;Sistemas Distribuidos;B;4;7;T;18
+87;Teoría y Dinámica de Sistemas;A;4;7;TP;30
+88;Laboratorio de Sistemas Distribuidos;A;4;7;P;20
+89;Metodología de la Investigación;A;4;7;T;30
+90;Calidad de Software;B;4;8;T;18
+91;Proyecto I;B;4;8;TP;20
+92;Calidad de Software;A;4;8;T;18
+93;Investigación de Operaciones;A;4;8;T;35
+94;Proyecto I;A;4;8;P;20
+95;Redes;A;4;8;P;20
+96;Redes;B;4;8;P;20
+97;Gestión de Proyectos Informáticos;A;4;9;T;30
+98;Proyecto II;A;4;9;TP;28
+99;Proyecto II     CANCELAR ESTE CURSO;B;4;9;TP;28
+100;Fundamentos de Economía;A;4;9;T;25
+101;Gestión Empresarial;A;4;9;T;25
+102;Legislación Laboral;A;4;9;T;35
+103;Trabajo de Grado;A;4;10;T;120
+104;Formación ciudadana (para primer semestre);A;4;1;T;30
+105;Pensamiento fotográfico (para primer semestre);B;4;1;T;30
