@@ -7,6 +7,7 @@ package Agente.AgenteHorario;
 
 import Agente.Agente;
 import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
+import Evaluacion.EvaluadorAgenteHorario;
 import java.util.ArrayList;
 
 
@@ -16,8 +17,12 @@ import java.util.ArrayList;
  */
 public class AgenteHorario extends Agente{
 
+    
+    private EvaluadorAgenteHorario  evaluador ;
+    
     public AgenteHorario(ArrayList<AsignacionHorario> horarios) {        
        memes = horarios;
+       this.evaluador= new EvaluadorAgenteHorario();
     }
     
 
@@ -38,6 +43,7 @@ public class AgenteHorario extends Agente{
 
     @Override
     public double getEvaluacion() {
+        this.evaluacion=this.evaluador.evaluar(this);
         return this.evaluacion;
     }
 

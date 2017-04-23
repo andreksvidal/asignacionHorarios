@@ -9,13 +9,13 @@ package Agente.AgenteHorario;
  *
  * @author ingesis
  */
-public class FranjaHoraria implements Comparable<FranjaHoraria>{
+public class FranjaHoraria implements Comparable<FranjaHoraria> {
 
     private String dia;
     private String hora;
     private Salon salon;
 
-    public FranjaHoraria(String dia, String hora, Salon salon)  {
+    public FranjaHoraria(String dia, String hora, Salon salon) {
         this.dia = dia;
         this.hora = hora;
         this.salon = salon;
@@ -43,26 +43,33 @@ public class FranjaHoraria implements Comparable<FranjaHoraria>{
 
     public void setSalon(Salon salon) {
         this.salon = salon;
-        
+
     }
 
     @Override
     public int compareTo(FranjaHoraria otra) {
-       
-        if(this.dia.equalsIgnoreCase(otra.getDia()))
-        {
-            if(this.hora.equals(otra.getHora()))
-            {
-                if(this.salon.getIdentifacador()==otra.getSalon().getIdentifacador())
-                {
+
+        if (this.dia.equalsIgnoreCase(otra.getDia())) {
+            if (this.hora.equals(otra.getHora())) {
+                if (this.salon.getIdentifacador() == otra.getSalon().getIdentifacador()) {
                     return 0;
                 }
             }
         }
-        
+
         return -1;
     }
 
-    
+    public int compareToNoSalon(FranjaHoraria otra) {
 
+        if (this.dia.equalsIgnoreCase(otra.getDia())) {
+            if (this.hora.equals(otra.getHora())) {
+
+                return 0;
+
+            }
+        }
+
+        return -1;
+    }
 }

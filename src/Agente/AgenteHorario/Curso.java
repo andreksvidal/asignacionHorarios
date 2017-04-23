@@ -20,15 +20,31 @@ public class Curso {
     private String profesorImparte;
     private String tipo;
 
-    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre,String tipo, int cupoMaximo) {
+    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre, String tipo, int cupoMaximo) {
         this.nombreCurso = nombreCurso;
         this.id = id;
         this.grupo = grupo;
         this.horas = horas;
         this.semestre = semestre;
         this.cupoMaximo = cupoMaximo;
-        this.tipo=tipo;
-        this.profesorImparte="pacho";
+        this.tipo = tipo;
+        this.profesorImparte = "pacho";
+    }
+
+    public String getProfesorImparte() {
+        return profesorImparte;
+    }
+
+    public void setProfesorImparte(String profesorImparte) {
+        this.profesorImparte = profesorImparte;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getNombreCurso() {
