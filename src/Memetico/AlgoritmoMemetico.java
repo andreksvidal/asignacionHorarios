@@ -62,7 +62,7 @@ public class AlgoritmoMemetico {
         Collections.sort(unionPoblacion, (Agente o1, Agente o2) -> {
             return (int) (o2.getEvaluacionAgente()- o1.getEvaluacionAgente());
         });
-        return unionPoblacion.subList(0, tamPob);
+        return new ArrayList<>(unionPoblacion.subList(0, tamPob));
     }
 
     private ArrayList<Agente> reiniciarPoblacion(ArrayList<Agente> poblacion) {
@@ -71,8 +71,7 @@ public class AlgoritmoMemetico {
         Collections.sort(poblacion, (Agente o1, Agente o2) -> {
             return (int) (o2.getEvaluacionAgente()- o1.getEvaluacionAgente());
         });
-        poblacion.subList(0, tamConservar);
-        nuevaPoblacion.addAll(poblacion);
+        nuevaPoblacion.addAll(new ArrayList<> (poblacion.subList(0, tamConservar)));
         return nuevaPoblacion;
     }
 
