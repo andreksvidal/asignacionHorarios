@@ -22,7 +22,7 @@ public class EnfriamientoSimulado {
         Solucion mejorSolucion = solucionInicial;
         Solucion solucionActual = solucionInicial;
 
-        while (temp > 1) {
+        while (temp >0.005 ) {
             Solucion solucionPrima = solucionActual.getVecinoAleatorio();
             
             if (probabilidadAceptacion(solucionInicial.getEvaluacion(), solucionPrima.getEvaluacion(), temp) >= Math.random()) {

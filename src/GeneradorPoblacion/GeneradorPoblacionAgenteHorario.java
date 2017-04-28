@@ -114,6 +114,7 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
 
         //cuando se realiza la asignacion de horarios para todos los cursos, se crea un nuevo agente Horario y se retorna.
         AgenteHorario agente = new AgenteHorario(asignaciones);
+        agente.setGenerador(this);
         return agente;
 
     }

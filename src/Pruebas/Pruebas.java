@@ -27,11 +27,13 @@ public class Pruebas {
 
         GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
 
+        
         ArrayList<Agente> agentes = generador.generarPoblacion(250);
 
         System.out.println("Agentes " + agentes.size());
         Evaluador evaluador = new EvaluadorAgenteHorario();
 
+        
         float mejor = Float.POSITIVE_INFINITY;
         int posicionMejor = 0;
 
@@ -54,8 +56,10 @@ public class Pruebas {
         
           System.out.println("Mejor generado : " + solucion.getEvaluacion());
           System.out.println("Mejorando el mejor...");
-          Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 1000); 
+         
+          Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 400); 
         
+         
           System.out.println("Mejora" + mejorado.getEvaluacion());
 
 
