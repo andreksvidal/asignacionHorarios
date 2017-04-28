@@ -29,18 +29,31 @@ public class Pruebas {
         ArrayList<Agente> agentes = generador.generarPoblacion(50);
 
         Evaluador evaluador = new EvaluadorAgenteHorario();
-
-        float mejor= Float.POSITIVE_INFINITY;
-        for (Agente agente : agentes) {
-            float evaluacion = evaluador.evaluar((AgenteHorario) agente);
-            if(evaluacion<mejor)
-            {
-                mejor=evaluacion;
-            }
-            System.out.println(evaluacion);
-        }
+//
+//        float mejor= Float.POSITIVE_INFINITY;
+//        for (Agente agente : agentes) {
+//            float evaluacion = evaluador.evaluar((AgenteHorario) agente);            
+//            if(evaluacion<mejor)
+//            {
+//                mejor=evaluacion;
+//            }
+//            System.out.println(evaluacion);
+//        }
+//        System.out.println("Mejor gen:"+mejor);
         
-        System.out.println("Mejor generado : " + mejor);
+        float mejorEval= evaluador.evaluar((AgenteHorario) agentes.get(0)); 
+        Agente mejorAg=(AgenteHorario) agentes.get(0);
+        float evaluacion;
+        for (int i = 1; i < agentes.size(); i++) {
+             evaluacion=evaluador.evaluar((AgenteHorario) agentes.get(i));
+            if(evaluacion<mejorEval){
+                mejorEval=evaluacion;
+                mejorAg=(AgenteHorario) agentes.get(i);
+            }           
+        }
+        System.out.println("Mejor :"+mejorEval);
+        evaluador.evaluar(mejorAg);
+        
 
     }
 }

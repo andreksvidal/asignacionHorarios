@@ -20,7 +20,7 @@ public class Curso {
     private String profesorImparte;
     private String tipo;
 
-    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre, String tipo, int cupoMaximo) {
+    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre, String tipo, int cupoMaximo, String profesor) {
         this.nombreCurso = nombreCurso;
         this.id = id;
         this.grupo = grupo;
@@ -28,7 +28,7 @@ public class Curso {
         this.semestre = semestre;
         this.cupoMaximo = cupoMaximo;
         this.tipo = tipo;
-        this.profesorImparte = "pacho";
+        this.profesorImparte = profesor;
     }
 
     public String getProfesorImparte() {

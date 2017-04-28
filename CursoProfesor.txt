@@ -1,0 +1,104 @@
+1;Cálculo I ;FG;4;1;T;30;MARIA LUCIA MUÑOZ VARGAS
+2;Cálculo I;FI;4;1;T;30;OMAR ALBEIRO TREJO NARVAEZ
+3;Introducción a la Informática;C;4;1;T;25;JHON EDER MASSO DAZA
+4;Cálculo I;FA;4;1;T;30;OMAR ALBEIRO TREJO NARVAEZ
+5;Cálculo I;FF;4;1;T;30;MARIA LUCIA MUÑOZ VARGAS
+6;Introducción a la Informática;A;4;1;T;25;JIMENA ADRIANA TIMANA PEÑA
+7;Introducción a la Informática;B;4;1;T;25;JORGE JAIR MORENO CHAUSTRE
+8;Introducción a la Informática;D;4;1;T;25;SILER   AMADOR DONADO
+9;Introducción a la PIS;A;4;1;T;30;ANA MARIA CHIMUNJA
+10;Introducción a la PIS;B;4;1;T;30;POR DEFINIR      
+11;Laboratorio de Introducción a la Informática;A;4;1;P;20;JUDY VIVIANA MOLANO MORA
+12;Laboratorio de Introducción a la Informática;B;4;1;P;20;MARIA ISABEL VIDAL CAICEDO
+13;Laboratorio de Introducción a la Informática;C;4;1;P;20;RENE FABIAN ZUÑIGA MUÑOZ
+14;Laboratorio de Introducción a la Informática;D;4;1;P;20;RICARDO ANTONIO ZAMBRANO SEGURA
+15;Laboratorio de Introducción a la Informática;E;4;1;P;20;SARA DONNELLY GARCES AGREDO
+16;Lectura y Escritura;Q;4;1;T;30;CLAUDIA LUCIA HURTADO ALEGRIA
+17;Lectura y Escritura;R;4;1;T;30;SALOMON   RODRIGUEZ GUARIN
+18;Álgebra Lineal;FD;4;2;T;10;GUSTAVO ADOLFO GOMEZ AGREDO
+19;Laboratorio de Programación Orientada a Objetos;A;4;2;P;20;JHON EDER MASSO DAZA
+20;Laboratorio de Programación Orientada a Objetos;B;4;2;P;20;JORGE JAIR MORENO CHAUSTRE
+21;Laboratorio de Programación Orientada a Objetos;C;4;2;P;20;POR DEFINIR      
+22;Laboratorio de Programación Orientada a Objetos;D;4;2;P;20;RICARDO ANTONIO ZAMBRANO SEGURA
+23;Álgebra Lineal;I;4;2;T;35;JAIME   TOBAR MUÑOZ
+24;Álgebra Lineal;J;4;2;T;35;POR DEFINIR      
+25;Cálculo II;F;4;2;T;40;MARIA MARLEN BENDECK LUGO
+26;Cálculo II;FC;4;2;T;30;VICTOR HUGO RUIZ GUACHETA
+27;Laboratorio de Mecánica;FA;4;2;L;15;ELIANA MARGARITA AGUILAR LARRARTE
+28;Laboratorio de Mecánica;FB;4;2;L;15;ELIANA MARGARITA AGUILAR LARRARTE
+29;Laboratorio de Mecánica;N;4;2;L;15;JULIANA PAOLA ENRIQUEZ FUERTES
+30;Laboratorio de Mecánica;O;4;2;L;15;MARIA MAGDALENA FALLA SOLORZANO
+31;Mecánica;FC;4;2;T;40;YASSER HALIL OCHOA MUÑOZ
+32;Mecánica;FD;4;2;T;40;YASSER HALIL OCHOA MUÑOZ
+33;Programación Orientada a Objetos;A;4;2;T;25;EMBER UBEIMAR MARTINEZ FLOR
+34;Programación Orientada a Objetos;B;4;2;T;25;JHON EDER MASSO DAZA
+35;Programación Orientada a Objetos;C;4;2;T;25;JORGE JAIR MORENO CHAUSTRE
+36;Estructuras de Datos I;B;4;3;T;30;JORGE JAIR MORENO CHAUSTRE
+37;Laboratorio de Estructuras de Datos I;C;4;3;P;16;CARLOS ERNESTO MAYA VALLEJO
+38;Cálculo III;D;4;3;T;35;WILMER LIBARDO MOLINA YEPES
+39;Cálculo III;FB;4;3;T;18;YANETH PATRICIA LOPEZ MUTIS
+40;Electromagnetismo;FC;4;3;T;35;SONIA MARITZA HENAO DUQUE
+41;Electromagnetismo;FD;4;3;T;35;YASSER HALIL OCHOA MUÑOZ
+42;Estructuras de Datos I;A;4;3;T;30;RICARDO ANTONIO ZAMBRANO SEGURA
+43;Laboratorio de Electromagnetismo;C;4;3;L;18;JORGE WASHINGTON CORONEL GARCIA
+44;Laboratorio de Electromagnetismo;D;4;3;L;18;OSCAR   BERMUDEZ CASTILLO
+45;Laboratorio de Estructuras de Datos I;A;4;3;P;16;DANIEL EDUARDO PAZ PERAFAN
+46;Laboratorio de Estructuras de Datos I;B;4;3;P;16;JORGE JAIR MORENO CHAUSTRE
+47;Laboratorio de Estructuras de Datos I;D;4;3;P;16;JUDY VIVIANA MOLANO MORA
+48;Bases de Datos I;A;4;4;T;30;JIMENA ADRIANA TIMANA PEÑA
+49;Ecuaciones Diferenciales Ordinarias;D;4;4;T;33;ANA MILENA PLAZA BUITRAGO
+50;Estructura de Datos II;A;4;4;T;35;RENE FABIAN ZUÑIGA MUÑOZ
+51;Laboratorio de Bases de Datos I;A;4;4;P;15;CARLOS ERNESTO MAYA VALLEJO
+52;Laboratorio de Bases de Datos I;B;4;4;P;15;MARTHA ELIANA MENDOZA BECERRA
+53;Laboratorio de Estructuras de Datos II;A;4;4;P;16;EDWIN FERNEY CALDON PIZO
+54;Laboratorio de Estructuras de Datos II;B;4;4;P;16;JHON EDER MASSO DAZA
+55;Vibraciones y Ondas;D;4;4;T;32;CAROL JULIETH AGUILAR PAZ
+56;Vibraciones y Ondas;E;4;4;T;32;CAROL JULIETH AGUILAR PAZ
+57;Bases de Datos II;A;4;5;T;20;WILSON ALFREDO ORTEGA ORDOÑEZ
+58;Bases de Datos II;B;4;5;T;20;EDWIN FERNEY CALDON PIZO
+59;Ingeniería de Software I;A;4;5;T;35;CARLOS ALBERTO ARDILA ALBARRACIN
+60;Laboratorio de Bases de Datos II;A;4;5;P;17;WILSON ALFREDO ORTEGA ORDOÑEZ
+61;Laboratorio de Bases de Datos II;C;4;5;P;17;POR DEFINIR      
+62;Laboratorio de Ingeniería de Software I;A;4;5;P;18;CARLOS ALBERTO ARDILA ALBARRACIN
+63;Laboratorio de Ingeniería de Software I;B;4;5;P;18;POR DEFINIR      
+64;Teoría de la Computación;A;4;5;TP;35;CESAR JESUS PARDO CALVACHE
+65;Análisis Numérico;A;4;5;TP;20;CARLOS ALBERTO ARDILA ALBARRACIN
+66;Análisis Numérico;B;4;5;TP;15;POR DEFINIR      
+67;Arquitectura Computacional;A;4;5;TP;23;DARIO FERNANDO CHAMORRO VELA
+68;Laboratorio de Bases de Datos II;B;4;5;P;17;WILSON ALFREDO ORTEGA ORDOÑEZ
+69;Estructura de Lenguajes;A;4;6;T;30;WILSON ALFREDO ORTEGA ORDOÑEZ
+70;Ingeniería de Software II;A;4;6;T;28;JULIO ARIEL HURTADO ALEGRIA
+71;Laboratorio de Ingeniería de Software II;A;4;6;P;12;JULIO ARIEL HURTADO ALEGRIA
+72;Laboratorio de Ingeniería de Software II;A;4;6;P;18;CESAR JESUS PARDO CALVACHE
+73;Estadística y Probabilidad;FB;4;6;T;35;MARIO ELCIAS MUÑOZ OCHOA
+74;Laboratorio de Estructura de Lenguajes;A;4;6;P;15;WILSON ALFREDO ORTEGA ORDOÑEZ
+75;Laboratorio de Estructura de Lenguajes;B;4;6;P;15;WILSON ALFREDO ORTEGA ORDOÑEZ
+76;Laboratorio de Sistemas Operativos;A;4;6;P;13;ERWIN   MEZA VEGA
+77;Laboratorio de Sistemas Operativos;B;4;6;P;15;ERWIN   MEZA VEGA
+78;Sistemas Operativos;A;4;6;T;33;ERWIN   MEZA VEGA
+79;Ingeniería de Software III;A;4;7;T;30;WILSON LIBARDO PANTOJA YEPEZ
+80;Inteligencia Artificial;A;4;7;TP;20;EMBER UBEIMAR MARTINEZ FLOR
+81;Inteligencia Artificial;B;4;7;TP;20;JIMENA ADRIANA TIMANA PEÑA
+82;Laboratorio de Ingeniería de Software III;A;4;7;P;18;WILSON LIBARDO PANTOJA YEPEZ
+83;Laboratorio de Ingeniería de Software III;B;4;7;P;14;WILSON ALFREDO ORTEGA ORDOÑEZ
+84;Laboratorio de Sistemas Distribuidos;B;4;7;P;20;DANIEL EDUARDO PAZ PERAFAN
+85;Sistemas Distribuidos;A;4;7;T;18;DANIEL EDUARDO PAZ PERAFAN
+86;Sistemas Distribuidos;B;4;7;T;18;PABLO AUGUSTO MAGE IMBACHI
+87;Teoría y Dinámica de Sistemas;A;4;7;TP;30;MIGUEL ANGEL NIÑO ZAMBRANO
+88;Laboratorio de Sistemas Distribuidos;A;4;7;P;20;DANIEL EDUARDO PAZ PERAFAN
+89;Metodología de la Investigación;A;4;7;T;30;CAROLINA   GONZALEZ SERRANO
+90;Calidad de Software;B;4;8;T;18;CARLOS ALBERTO ARDILA ALBARRACIN
+91;Proyecto I;B;4;8;TP;20;MIGUEL ANGEL NIÑO ZAMBRANO
+92;Calidad de Software;A;4;8;T;18;SANDRA LORENA BUITRON RUIZ
+93;Investigación de Operaciones;A;4;8;T;35;ARIEL EDMUNDO PABON BURBANO
+94;Proyecto I;A;4;8;P;20;MIGUEL ANGEL NIÑO ZAMBRANO
+95;Redes;A;4;8;P;20;FULVIO YESID VIVAS CANTERO
+96;Redes;B;4;8;P;20;FULVIO YESID VIVAS CANTERO
+97;Gestión de Proyectos Informáticos;A;4;9;T;30;SANDRA LORENA BUITRON RUIZ
+98;Proyecto II;A;4;9;TP;28;WILSON LIBARDO PANTOJA YEPEZ
+99;Proyecto II;B;4;9;TP;28;POR DEFINIR      
+100;Fundamentos de Economía;A;4;9;T;25;JULIANA ISABEL SARMIENTO CASTILLO
+101;Gestión Empresarial;A;4;9;T;25;JUAN MANUEL AREVALO VIVEROS
+102;Legislación Laboral;A;4;9;T;35;MARIA ELENA VIVAS MUÑOZ
+104;Formación ciudadana;A;4;1;T;30;BIBIANA EDIVEY CASTRO FRANCO
+105;Pensamiento fotográfico;B;4;1;T;30;JORGE IVAN CORONEL
