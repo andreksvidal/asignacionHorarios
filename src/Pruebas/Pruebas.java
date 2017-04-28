@@ -7,12 +7,8 @@ package Pruebas;
 
 import Agente.Agente;
 import Agente.AgenteHorario.AgenteHorario;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.ConfiguracionTabuSearch;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.TabuSearch;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.criterios_aspiracion.CriteriosAspiracionEnum;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.criterios_parada.CriteriosParadaEnum;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.lista_tabu.TabuListMovimientos;
+import BusquedaLocal.EnfriamientoSimulado.EnfriamientoSimulado;
+import BusquedaLocal.ProblemaEnfriamiento.Solucion;
 import Evaluacion.Evaluador;
 import Evaluacion.EvaluadorAgenteHorario;
 import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
@@ -31,7 +27,7 @@ public class Pruebas {
 
         GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
 
-        ArrayList<Agente> agentes = generador.generarPoblacion(50);
+        ArrayList<Agente> agentes = generador.generarPoblacion(250);
 
         System.out.println("Agentes " + agentes.size());
         Evaluador evaluador = new EvaluadorAgenteHorario();
@@ -43,32 +39,25 @@ public class Pruebas {
             Agente agente = agentes.get(i);
 
             float evaluacion = evaluador.evaluar((AgenteHorario) agente);
-            System.out.println(evaluacion);
+            agente.setEvaluacion(evaluacion);
+            //System.out.println(evaluacion);
             if (evaluacion < mejor) {
                 posicionMejor=i;
                 mejor=evaluacion;
             }
-            System.out.println(evaluacion);
+            //System.out.println(evaluacion);
         }
 
+          EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
+          
+          Solucion solucion= (AgenteHorario)agentes.get(posicionMejor);
         
+          System.out.println("Mejor generado : " + solucion.getEvaluacion());
+          System.out.println("Mejorando el mejor...");
+          Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 1000); 
         
-        TabuSearch busquedaTabu = new TabuSearch();
+          System.out.println("Mejora" + mejorado.getEvaluacion());
 
-        ConfiguracionTabuSearch configuracion = new ConfiguracionTabuSearch();
-
-        configuracion.setTipoProblema(false);
-        configuracion.setCriterioParada(CriteriosParadaEnum.NUM_ITERACIONES, 1000);
-        configuracion.setCriterioAspiracion(CriteriosAspiracionEnum.POR_OBJETIVO);
-        configuracion.setListaTabu(new TabuListMovimientos(), 5);
-
-        
-        Individual seed= agentes.get(posicionMejor);
-        
-        
-        Individual mejorado = busquedaTabu.tabuSearch(configuracion, seed);
-        
-        System.out.println("Mejor gen:" + mejorado.getEvaluacion());
 
     }
 

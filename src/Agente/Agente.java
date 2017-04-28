@@ -5,14 +5,14 @@
  */
 package Agente;
 
-import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
+
 import java.util.ArrayList;
 
 /**
  *
  * @author ingesis
  */
-public abstract class Agente implements Individual {
+public abstract class Agente  {
 
     protected ArrayList memes;
     protected float evaluacion;

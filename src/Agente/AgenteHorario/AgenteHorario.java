@@ -6,7 +6,8 @@
 package Agente.AgenteHorario;
 
 import Agente.Agente;
-import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
+import BusquedaLocal.ProblemaEnfriamiento.Solucion;
+
 import Evaluacion.EvaluadorAgenteHorario;
 import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author ingesis
  */
-public class AgenteHorario extends Agente implements Comparable<AgenteHorario> {
+public class AgenteHorario extends Agente  implements Solucion, Comparable<AgenteHorario> {
 
     private EvaluadorAgenteHorario evaluador;
 
@@ -28,50 +29,7 @@ public class AgenteHorario extends Agente implements Comparable<AgenteHorario> {
 
     }
 
-    /**
-     * *************************************************************************************************
-     */
-    /*IMPLEMENTAR ESTOS METODOS ES NECESARIO PARA QUE EL AGENTE PUEDA SER MEJORADO CON LA BUSQUEDA LOCAL*/
-    /**
-     * *************************************************************************************************
-     */
-    @Override
-    public ArrayList<Individual> getNeighbourhood() {
-        ArrayList<Agente> agentes = obtenerVecinos();
-        ArrayList<Individual> individuos = new ArrayList();
-        for (Agente agente : agentes) {
-            individuos.add(agente);
-        }
-        return individuos;
-    }
-
-    @Override
-    public double getEvaluacion() {
-        this.evaluacion = this.evaluador.evaluar(this);
-        return this.evaluacion;
-    }
-
-    @Override
-    public int getIndividualSize() {
-        return this.getMemes().size();
-    }
-
-    @Override
-    public Object getValue(int position) {
-        return this.getMemes().get(position);
-    }
-
-    @Override
-    public Individual clonar() {
-        try {
-            return (Individual) this.clone();
-        } catch (CloneNotSupportedException ex) {
-            System.out.println("Error, No se pudo realizar el proceso de clonación");
-            return null;
-        }
-
-    }
-
+   
     public EvaluadorAgenteHorario getEvaluador() {
         return evaluador;
     }
@@ -96,10 +54,12 @@ public class AgenteHorario extends Agente implements Comparable<AgenteHorario> {
 
         AgenteHorario agenteVecino = new AgenteHorario((ArrayList<AsignacionHorario>) this.memes.clone());
 
-        ArrayList<Integer> asignacionesVecino = generarCursosCambiar(5);
+        ArrayList<Integer> asignacionesVecino = generarCursosCambiar(1);//El 1 indica el numero de cursos al que se le cambian las flanjas.
 
+       
         ArrayList<Object> memesVecino = agenteVecino.getMemes();
 
+        
         for (int i = 0; i < asignacionesVecino.size(); i++) {
             AsignacionHorario asignacionVecino = (AsignacionHorario) memesVecino.get(asignacionesVecino.get(i));
             Tiempo tiempo = new Tiempo();
@@ -191,5 +151,44 @@ public class AgenteHorario extends Agente implements Comparable<AgenteHorario> {
             }
         }
         return -1;
+    }
+
+    @Override
+    public void evaluar() {
+       this.evaluacion=this.evaluador.evaluar(this);
+    }
+
+    @Override
+    public double getEvaluacion() {
+       return this.evaluacion;
+    }
+
+    @Override
+    public ArrayList<Solucion> getVecinos() {
+       
+        
+      ArrayList<Agente> vecinosAgente=obtenerVecinos();
+      ArrayList<Solucion> vecinosSolucion=new ArrayList<Solucion>();
+      
+        for (Agente agente: vecinosAgente) {
+            
+            Solucion solucion =(AgenteHorario) agente;
+            vecinosSolucion.add(solucion);
+        }
+        return vecinosSolucion;
+    }
+
+    @Override
+    public Solucion getVecinoAleatorio() {
+          
+           AgenteHorario vecino =(AgenteHorario) generarVecino();
+           
+        
+           vecino.setEvaluacion(this.evaluador.evaluar(vecino));
+         
+           
+           Solucion solucion = (AgenteHorario)vecino;
+           
+           return solucion;
     }
 }
