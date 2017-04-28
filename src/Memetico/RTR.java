@@ -20,7 +20,7 @@ public class RTR implements Recombinacion {
     @Override
     public ArrayList<Agente> recombinacion(ArrayList<Agente> poblacion) {
         ArrayList<Agente> hijos = new ArrayList<>();
-        for (int i = 0; i < poblacion.size(); i += 2) {
+        for (int i = 0; i < poblacion.size()-1; i += 2) {
             Agente padre = poblacion.get(i);
             Agente madre = poblacion.get(i + 1);
             hijos.add(recombinar(padre, madre));
