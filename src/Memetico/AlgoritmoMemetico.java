@@ -77,6 +77,6 @@ public class AlgoritmoMemetico {
 
     private boolean evaluacionesSimilares() {
         //Si un gran porcentaje de los agentes tienen evaluacion parecida
-        return true;
+        return false;
     }
 }
