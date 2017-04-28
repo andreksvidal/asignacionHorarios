@@ -81,6 +81,7 @@ public class AgenteHorario extends Agente implements Solucion, Comparable<Agente
             String dia = tiempo.getDias().get(randomDia);
             String hora = tiempo.getHoras().get(randomHora);
 
+            
             //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
             FranjaHoraria franja = new FranjaHoraria(dia, hora, asignacionVecino.getFranjasHorario().get(randomFranjas).getSalon());
 

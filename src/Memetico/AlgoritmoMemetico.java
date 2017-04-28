@@ -33,7 +33,8 @@ public class AlgoritmoMemetico {
         ArrayList<Agente> pobInicial = generador.generarPoblacion(numPob);
         ArrayList<Agente> poblacion = busquedaLocal(pobInicial);
         //Criterio Parada
-        while (it<100) {
+        while (it<1) {
+            System.out.println("iteracion " + it );
             it++;
             ArrayList<Agente> nuevaPoblacion = tipoRecombinacion.recombinacion(poblacion);
             //Probar aplicando una vez mas busqueda local
@@ -48,9 +49,12 @@ public class AlgoritmoMemetico {
 
     public ArrayList<Agente> busquedaLocal(ArrayList<Agente> pobInicial) {
         ArrayList<Agente> poblacion = new ArrayList<>();
+        int cont=0;
         for (Agente agente : pobInicial) {
             Solucion solucion = (AgenteHorario) agente;
             poblacion.add((Agente) algoritmo.ejecutarAlgoritmo(solucion, 400));
+            System.out.println("busqueda local" + cont);
+            cont++;
         }
         return poblacion;
     }

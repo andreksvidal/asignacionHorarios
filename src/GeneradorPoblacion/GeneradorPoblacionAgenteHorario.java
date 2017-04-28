@@ -28,6 +28,7 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
         LectorArchivosHorarios lector = new LectorArchivosHorarios();
         this.cursosDisponibles = lector.leerCursos();
         this.salonesDisponibles = lector.leerSalones();
+      
 
     }
 

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class LectorArchivosHorarios {
 
     public ArrayList<Curso> leerCursos() {
-
+        System.out.println("invocado leer cursos");
         ArrayList<Curso> cursos = new ArrayList();
         ManejoArchivos lector = new ManejoArchivos();
         ArrayList<String> lineas = lector.leerArchivo("CursoProfesor.txt");
@@ -32,6 +32,7 @@ public class LectorArchivosHorarios {
 
     public ArrayList<Salon> leerSalones() {
 
+        System.out.println("invocado leer salones");
         ArrayList<Salon> salones = new ArrayList();
         ManejoArchivos lector = new ManejoArchivos();
         ArrayList<String> lineas = lector.leerArchivo("Salones.txt");

@@ -26,9 +26,9 @@ public class Pruebas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        AlgoritmoMemetico memetico = new AlgoritmoMemetico();
-        GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
-
+       AlgoritmoMemetico memetico = new AlgoritmoMemetico();
+     GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
+//
 //        ArrayList<Agente> agentes = generador.generarPoblacion(250);
 //
 //        System.out.println("Agentes " + agentes.size());
@@ -41,6 +41,7 @@ public class Pruebas {
 //            Agente agente = agentes.get(i);
 //
 //            float evaluacion = evaluador.evaluar((AgenteHorario) agente);
+//       
 //            agente.setEvaluacion(evaluacion);
 //            //System.out.println(evaluacion);
 //            if (evaluacion < mejor) {
@@ -55,13 +56,13 @@ public class Pruebas {
 //        Solucion solucion = (AgenteHorario) agentes.get(posicionMejor);
 //
 //        System.out.println("Mejor generado : " + solucion.getEvaluacion());
-//        System.out.println("Mejorando el mejor...");
+//   
 //
 //        Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 400);
 //
 //        System.out.println("Mejora" + mejorado.getEvaluacion());
         
-        memetico.ejecutar(generador, 100, 60, new RTR(), algoritmo);
+        memetico.ejecutar(generador, 10, 5, new RTR(), algoritmo);
 
     }
 

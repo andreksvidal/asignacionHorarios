@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/BusquedaLocal/EnfriamientoSimulado/EnfriamientoSimulado.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Agente/AgenteHorario/AgenteHorario.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Evaluacion/Evaluador.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Agente/AgenteHorario/AsignacionHorario.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Memetico/AlgoritmoMemetico.java</file>
             <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Pruebas/Pruebas.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/GeneradorPoblacion/GeneradorPoblacionAgenteHorario.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/GestorArchivos/LectorArchivosHorarios.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/GeneradorPoblacion/GeneradorPoblacion.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/asignacionHorarios/src/Evaluacion/EvaluadorAgenteHorario.java</file>
         </group>
     </open-files>
 </project-private>
