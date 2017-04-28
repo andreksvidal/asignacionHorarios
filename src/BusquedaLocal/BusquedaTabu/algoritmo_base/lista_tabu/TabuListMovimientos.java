@@ -5,6 +5,8 @@
  */
 package BusquedaLocal.BusquedaTabu.algoritmo_base.lista_tabu;
 
+import Agente.AgenteHorario.AgenteHorario;
+import Agente.AgenteHorario.AsignacionHorario;
 import BusquedaLocal.BusquedaTabu.algoritmo_base.Individual;
 
 /**
@@ -46,10 +48,16 @@ public class TabuListMovimientos implements TabuList {
     public boolean isTabu(Individual promisingSolution, Individual currentSolution) {
         int posX = -1, posY = -1;
         for (int i=0;i<listaTabu.length;i++){
-            if (promisingSolution.getValue(i)!=currentSolution.getValue(i)){
+            AsignacionHorario promising= (AsignacionHorario)promisingSolution.getValue(i);
+            AsignacionHorario current= (AsignacionHorario)currentSolution.getValue(i);
+            if (promising.compareTo(current)!=0){
                 if (posX==-1) posX = i;
                 else posY = i;
             }
+        }
+        
+        if(posX==-1 && posY==-1)
+        {return false;
         }
         return listaTabu[posX][posY]!=0;
     }

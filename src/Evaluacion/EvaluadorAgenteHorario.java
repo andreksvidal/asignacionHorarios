@@ -79,7 +79,7 @@ public class EvaluadorAgenteHorario implements Evaluador {
         for (FranjaHoraria franjaAsigActual : franjasAsigActual) {
             for (FranjaHoraria franjaAsigVecina : franjasAsigVecina) {
                 if (franjaAsigActual.compareTo(franjaAsigVecina) == 0) {
-                    System.out.println("penalizacionFranja");
+                   
                     sumaPenalizaciones += 5;
                 }
             }

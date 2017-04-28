@@ -131,7 +131,7 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
 
     }
 
-    private boolean salonEsValidoParaCurso(Salon salon, Curso curso) {
+    public boolean salonEsValidoParaCurso(Salon salon, Curso curso) {
         return salon.getCupoMaximo() >= curso.getCupoMaximo();
     }
 

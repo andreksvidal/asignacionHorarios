@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author ingesis
  */
-public class AsignacionHorario {
+public class AsignacionHorario implements Comparable<AsignacionHorario>{
 
     private ArrayList<FranjaHoraria> franjasHorario;
     private Curso curso;
@@ -37,6 +37,21 @@ public class AsignacionHorario {
 
     public void setFranjasHorario(ArrayList<FranjaHoraria> franjasHorario) {
         this.franjasHorario = franjasHorario;
+    }
+
+    @Override
+    public int compareTo(AsignacionHorario o) {
+        if(this.curso.getId()==o.getCurso().getId())
+        {
+            for (int i = 0; i < franjasHorario.size(); i++) {
+               if(this.franjasHorario.get(i).compareTo(o.getFranjasHorario().get(i))==0)
+               {
+                   return 0;
+               }
+                
+            }
+        }
+        return -1;
     }
 
 }
