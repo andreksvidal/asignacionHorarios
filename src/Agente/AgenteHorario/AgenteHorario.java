@@ -84,8 +84,6 @@ public class AgenteHorario extends Agente implements Solucion, Comparable<Agente
             //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
             FranjaHoraria franja = new FranjaHoraria(dia, hora, asignacionVecino.getFranjasHorario().get(randomFranjas).getSalon());
 
-            
-            
             asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
 
         }
@@ -135,10 +133,6 @@ public class AgenteHorario extends Agente implements Solucion, Comparable<Agente
         this.evaluacion = this.evaluador.evaluar(this);
     }
 
-    @Override
-    public double getEvaluacion() {
-        return this.evaluacion;
-    }
 
     @Override
     public ArrayList<Solucion> getVecinos() {
@@ -165,4 +159,16 @@ public class AgenteHorario extends Agente implements Solucion, Comparable<Agente
 
         return solucion;
     }
+
+    @Override
+    public double getEvaluacion() {
+        return this.evaluacion;
+    }
+
+
+
+
+  
+
+
 }

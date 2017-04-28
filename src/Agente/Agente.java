@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author ingesis
  */
-public abstract class Agente  {
+public abstract class Agente {
 
     protected ArrayList memes;
     protected float evaluacion;
@@ -29,4 +29,9 @@ public abstract class Agente  {
         this.evaluacion = evaluacion;
     }
 
+    public float getEvaluacionAgente() {
+        return evaluacion;
+    }
+
+    
 }

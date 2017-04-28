@@ -12,6 +12,8 @@ import BusquedaLocal.ProblemaEnfriamiento.Solucion;
 import Evaluacion.Evaluador;
 import Evaluacion.EvaluadorAgenteHorario;
 import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
+import Memetico.AlgoritmoMemetico;
+import Memetico.RTR;
 import java.util.ArrayList;
 
 /**
@@ -24,44 +26,42 @@ public class Pruebas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        AlgoritmoMemetico memetico = new AlgoritmoMemetico();
         GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
 
+//        ArrayList<Agente> agentes = generador.generarPoblacion(250);
+//
+//        System.out.println("Agentes " + agentes.size());
+//        Evaluador evaluador = new EvaluadorAgenteHorario();
+//
+//        float mejor = Float.POSITIVE_INFINITY;
+//        int posicionMejor = 0;
+//
+//        for (int i = 0; i < agentes.size(); i++) {
+//            Agente agente = agentes.get(i);
+//
+//            float evaluacion = evaluador.evaluar((AgenteHorario) agente);
+//            agente.setEvaluacion(evaluacion);
+//            //System.out.println(evaluacion);
+//            if (evaluacion < mejor) {
+//                posicionMejor = i;
+//                mejor = evaluacion;
+//            }
+//            //System.out.println(evaluacion);
+//        }
+
+        EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
+
+//        Solucion solucion = (AgenteHorario) agentes.get(posicionMejor);
+//
+//        System.out.println("Mejor generado : " + solucion.getEvaluacion());
+//        System.out.println("Mejorando el mejor...");
+//
+//        Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 400);
+//
+//        System.out.println("Mejora" + mejorado.getEvaluacion());
         
-        ArrayList<Agente> agentes = generador.generarPoblacion(250);
-
-        System.out.println("Agentes " + agentes.size());
-        Evaluador evaluador = new EvaluadorAgenteHorario();
-
-        
-        float mejor = Float.POSITIVE_INFINITY;
-        int posicionMejor = 0;
-
-        for (int i = 0; i < agentes.size(); i++) {
-            Agente agente = agentes.get(i);
-
-            float evaluacion = evaluador.evaluar((AgenteHorario) agente);
-            agente.setEvaluacion(evaluacion);
-            //System.out.println(evaluacion);
-            if (evaluacion < mejor) {
-                posicionMejor=i;
-                mejor=evaluacion;
-            }
-            //System.out.println(evaluacion);
-        }
-
-          EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
-          
-          Solucion solucion= (AgenteHorario)agentes.get(posicionMejor);
-        
-          System.out.println("Mejor generado : " + solucion.getEvaluacion());
-          System.out.println("Mejorando el mejor...");
-         
-          Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 400); 
-        
-         
-          System.out.println("Mejora" + mejorado.getEvaluacion());
-
+        memetico.ejecutar(generador, 100, 60, new RTR(), algoritmo);
 
     }
 

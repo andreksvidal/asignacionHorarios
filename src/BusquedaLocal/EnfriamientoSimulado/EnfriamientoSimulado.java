@@ -11,8 +11,9 @@ package BusquedaLocal.EnfriamientoSimulado;
  *
  * @author ingesis
  */
+
 import BusquedaLocal.ProblemaEnfriamiento.Solucion;
-public class EnfriamientoSimulado {
+public class EnfriamientoSimulado{
 
    
     public Solucion ejecutarAlgoritmo(Solucion solucionInicial, double tempInicial) {
