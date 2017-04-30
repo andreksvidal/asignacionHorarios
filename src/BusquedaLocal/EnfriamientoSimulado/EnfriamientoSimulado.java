@@ -19,9 +19,10 @@ public class EnfriamientoSimulado{
     public Solucion ejecutarAlgoritmo(Solucion solucionInicial, double tempInicial) {
         double temp = tempInicial;
     
-        double coolingRate = 0.005;
+        double coolingRate = 0.05;
         Solucion mejorSolucion = solucionInicial;
         Solucion solucionActual = solucionInicial;
+        
 
         while (temp >0.005 ) {
             Solucion solucionPrima = solucionActual.getVecinoAleatorio();
@@ -33,9 +34,9 @@ public class EnfriamientoSimulado{
                 mejorSolucion = solucionActual;
             }
 
-         
+          
 
-            temp *= 1 - coolingRate;
+            temp -=  coolingRate;
           
         }
 

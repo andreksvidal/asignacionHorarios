@@ -15,5 +15,5 @@ public interface Evaluador {
     
     
     
-    public float evaluar(Agente agente);
+    public void evaluar(Agente agente);
 }

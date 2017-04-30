@@ -6,6 +6,7 @@
 package Agente.AgenteHorario;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -13,31 +14,32 @@ import java.util.ArrayList;
  */
 public class Tiempo {
 
-    ArrayList<String> horas;
-    ArrayList<String> dias;
+     ArrayList<Integer> horas;
+     HashMap<Integer,String> dias;
 
-    public ArrayList<String> getDias() {
-        dias = new ArrayList();
-
-        dias.add("LUNES");
-        dias.add("MARTES");
-        dias.add("MIERCOLES");
-        dias.add("JUEVES");
-        dias.add("VIERNES");
-
+    public HashMap<Integer ,String> getDiasUniversidad() {
+        dias = new HashMap<>();
+        dias.put(0, "LUNES");
+        dias.put(1, "MARTES");
+        dias.put(2, "MIERCOLES");
+        dias.put(3, "JUEVES");
+        dias.put(4, "VIERNES");
+        
         return dias;
     }
 
-    public ArrayList<String> getHoras() {
+    public ArrayList<Integer> getHorasUniversidad() {
         horas = new ArrayList();
 
-        horas.add("7 a.m");
-        horas.add("9 a.m");
-        horas.add("11 a.m");
-        horas.add("2 p.m");
-        horas.add("4 p.m");
-        horas.add("6 p.m");
-
+       horas.add(7);
+       horas.add(9);
+       horas.add(11);
+       horas.add(14);
+       horas.add(16);
+       horas.add(18);
+       
+        
+        
         return horas;
     }
 

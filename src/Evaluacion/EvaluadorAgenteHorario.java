@@ -20,39 +20,29 @@ import java.util.ArrayList;
 public class EvaluadorAgenteHorario implements Evaluador {
 
     @Override
-    public float evaluar(Agente agente) {
+    public void evaluar(Agente agente) {
         AgenteHorario agenteHorario = (AgenteHorario) agente;
-        return evaluarAgente(agenteHorario.getMemes());
-
+        agente.setEvaluacion(aplicarPenalizaciones(agenteHorario.getMemes()));
+       
     }
 
-    private float evaluarAgente(ArrayList<Object> memes) {
-        ArrayList<AsignacionHorario> horario = new ArrayList();
-
-        for (Object meme : memes) {
-            AsignacionHorario asignacion = (AsignacionHorario) meme;
-            horario.add(asignacion);
-        }
-
-        return aplicarPenalizaciones(horario);
-
-    }
-
-    private float aplicarPenalizaciones(ArrayList<AsignacionHorario> horario) {
+    
+ 
+    
+    private float aplicarPenalizaciones(ArrayList<Object> horario) {
 
         float sumaPenalizaciones = 0;
 
         for (int asignacioni = 0; asignacioni < horario.size() - 1; asignacioni++) {
 
-            AsignacionHorario asignacionActual = horario.get(asignacioni);
-        
-
+            AsignacionHorario asignacionActual = (AsignacionHorario)horario.get(asignacioni);
+            
             for (int asignacionvecinai = asignacioni + 1; asignacionvecinai < horario.size(); asignacionvecinai++) {
-                AsignacionHorario asignacionVecina = horario.get(asignacionvecinai);
+                AsignacionHorario asignacionVecina = (AsignacionHorario)horario.get(asignacionvecinai);
          
 
                 //Una vez obtenidas las 2 asignaciones a comparar, se comparan cada una de sus franjas.
-                 sumaPenalizaciones += sumarPenalizaciones(asignacionVecina, asignacionActual);
+                 sumaPenalizaciones += sumarPenalizacionesAsignacion(asignacionVecina, asignacionActual);
                 //Esta no la entiendo, preguntar!
                 // float penalizacionTipoCurso= aplicarPenalizacionesTipoCurso(asignacionActual.getFranjasHorario(), asignacionVecina.getFranjasHorario(), asignacionActual.getCurso(), asignacionVecina.getCurso());
 
@@ -64,19 +54,17 @@ public class EvaluadorAgenteHorario implements Evaluador {
         return sumaPenalizaciones;
     }
 
-    public float sumarPenalizaciones(AsignacionHorario asignacionVecina, AsignacionHorario asignacionActual) {
-
-         float sumaPenalizaciones = 0;
-
-        String profesorAsignacionVecina = asignacionVecina.getCurso().getProfesorImparte();
-        String profesorAsignacionActual = asignacionActual.getCurso().getProfesorImparte();
+    public float sumarPenalizacionesAsignacion(AsignacionHorario asignacionVecina, AsignacionHorario asignacionActual) {
+       
+        float sumaPenalizaciones = 0;
+     
 
         ArrayList<FranjaHoraria> franjasAsigActual = asignacionActual.getFranjasHorario();
         ArrayList<FranjaHoraria> franjasAsigVecina = asignacionVecina.getFranjasHorario();
 
-        boolean mismoProfesor= profesorAsignacionActual.equalsIgnoreCase(profesorAsignacionVecina);
+        boolean mismoProfesor= asignacionVecina.getCurso().getProfesorImparte().equals(asignacionActual.getCurso().getProfesorImparte());
         boolean mismoSemestre= asignacionActual.getCurso().getSemestre()==asignacionVecina.getCurso().getSemestre();
-        boolean mismoCurso= asignacionActual.getCurso().getNombreCurso().equalsIgnoreCase(asignacionVecina.getCurso().getNombreCurso());
+        boolean mismoCurso= asignacionActual.getCurso().getNombreCurso().equals(asignacionVecina.getCurso().getNombreCurso());
         
         
         for (FranjaHoraria franjaAsigActual : franjasAsigActual) {
@@ -90,100 +78,27 @@ public class EvaluadorAgenteHorario implements Evaluador {
                 
                 if(mismoSemestre)
                 {
-                    
+                    //pueden existir dos grupos del mismo curso de un mismo semestre, dictandose a la misma hora en el mismo día.
+                    //Sin embargo, 2 cursos del mismo semestre , no se pueden dictar a la misma hora y el mismo dia.
                      if ((franjaAsigActual.compareToNoSalon(franjaAsigVecina) == 0) && (!mismoCurso))
                     {
                         sumaPenalizaciones += 2;
                     }
                 }
                 
-                if (franjaAsigActual.compareTo(franjaAsigVecina) == 0) {
-
+               if(franjaAsigActual.equals(franjaAsigVecina))
+               {
                     sumaPenalizaciones += 5;
-                }
+               }
                
             }
         }
         
         
-        
-        
+       
         return sumaPenalizaciones;
 
     }
 
     
-    
-    public boolean salonEsValidoParaCurso(Salon salon, Curso curso) {
-        return salon.getCupoMaximo() >= curso.getCupoMaximo();
-    }
-    /**
-     * *****************************************************************************************************************
-     */
-    /**
-     * Estos tres metodos se van a convertir en uno solo, por ahora, se hace asi
-     * para facilitar la deteccion de errores*
-     */
-    /**
-     * *****************************************************************************************************************
-     */
-    private float aplicarPenalizacionesFranja(ArrayList<FranjaHoraria> franjasAsigActual, ArrayList<FranjaHoraria> franjasAsigVecina) {
-
-        float sumaPenalizaciones = 0;
-
-        for (FranjaHoraria franjaAsigActual : franjasAsigActual) {
-            for (FranjaHoraria franjaAsigVecina : franjasAsigVecina) {
-                if (franjaAsigActual.compareTo(franjaAsigVecina) == 0) {
-
-                    sumaPenalizaciones += 5;
-                }
-            }
-        }
-
-        return sumaPenalizaciones;
-    }
-
-    private float aplicarPenalizacionesProfesor(ArrayList<FranjaHoraria> franjasAsigActual, ArrayList<FranjaHoraria> franjasAsigVecina, String profesorAsignacionActual, String profesorAsignacionVecina) {
-        float sumaPenalizaciones = 0;
-        if (profesorAsignacionActual.equalsIgnoreCase(profesorAsignacionVecina)) {
-            for (FranjaHoraria franjaAsigActual : franjasAsigActual) {
-                for (FranjaHoraria franjaAsigVecina : franjasAsigVecina) {
-                    if (franjaAsigActual.compareToNoSalon(franjaAsigVecina) == 0) {
-                        sumaPenalizaciones += 5;
-                    }
-                }
-            }
-
-        }
-        return sumaPenalizaciones;
-
-    }
-
-    private float aplicarPenalizacionesSemestre(ArrayList<FranjaHoraria> franjasAsigActual, ArrayList<FranjaHoraria> franjasAsigVecina, Curso curso1, Curso curso2) {
-
-        float sumaPenalizaciones = 0;
-
-        if (curso1.getSemestre() == curso2.getSemestre()) {
-            for (FranjaHoraria franjaAsigActual : franjasAsigActual) {
-                for (FranjaHoraria franjaAsigVecina : franjasAsigVecina) {
-                    if (franjaAsigActual.compareToNoSalon(franjaAsigVecina) == 0) {
-                        sumaPenalizaciones += 2;
-                    }
-                }
-            }
-        }
-
-        return sumaPenalizaciones;
-    }
-
-    /**
-     * *****************************************************************************************************************
-     */
-    /**
-     * Estos tres metodos se van a convertir en uno solo, por ahora, se hace asi
-     * para facilitar la deteccion de errores*
-     */
-    /**
-     * *****************************************************************************************************************
-     */
 }

@@ -8,6 +8,7 @@ package GestorArchivos;
 import Agente.AgenteHorario.Curso;
 import Agente.AgenteHorario.Salon;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -15,36 +16,75 @@ import java.util.ArrayList;
  */
 public class LectorArchivosHorarios {
 
-    public ArrayList<Curso> leerCursos() {
+    public HashMap<Integer, Curso> leerCursos() {
+
         System.out.println("invocado leer cursos");
-        ArrayList<Curso> cursos = new ArrayList();
+
+        HashMap<Integer, Curso> cursos = new HashMap();
+
         ManejoArchivos lector = new ManejoArchivos();
         ArrayList<String> lineas = lector.leerArchivo("CursoProfesor.txt");
-
         for (String linea : lineas) {
             String[] aux = linea.split(";");
-            Curso curso = new Curso(Integer.parseInt(aux[0]), aux[1], aux[2], Integer.parseInt(aux[3]), Integer.parseInt(aux[4]), aux[5], Integer.parseInt(aux[6]),aux[7]);
-            cursos.add(curso);
+            Curso curso = new Curso(Integer.parseInt(aux[0]), aux[1], aux[2], Integer.parseInt(aux[3]), Integer.parseInt(aux[4]), aux[5], Integer.parseInt(aux[6]), aux[7]);
+            cursos.put(curso.getId(), curso);
         }
 
         return cursos;
     }
 
-    public ArrayList<Salon> leerSalones() {
+    public HashMap<String, HashMap<Integer, Salon>> leerSalones() {
 
         System.out.println("invocado leer salones");
-        ArrayList<Salon> salones = new ArrayList();
+
+        HashMap<String, HashMap<Integer, Salon>> contenedor = new HashMap();
+
         ManejoArchivos lector = new ManejoArchivos();
+
         ArrayList<String> lineas = lector.leerArchivo("Salones.txt");
 
         for (String linea : lineas) {
 
             String[] aux = linea.split(";");
             Salon salon = new Salon(Integer.parseInt(aux[0]), aux[1], Integer.parseInt(aux[2]));
-            salones.add(salon);
+
+            if (!contenedor.containsKey(salon.getTipo())) {
+                HashMap<Integer, Salon> salonesTipo = new HashMap();
+                salonesTipo.put(salon.getIdentifacador(), salon);
+                contenedor.put(salon.getTipo(), salonesTipo);
+            } else {
+                HashMap<Integer, Salon> salonesTipo = contenedor.get(salon.getTipo());
+                salonesTipo.put(salon.getIdentifacador(), salon);
+
+            }
+
         }
-        return salones;
+
+        return contenedor;
     }
     
     
+    public HashMap<Integer, Salon> leerSalonesSimple() {
+
+        System.out.println("invocado leer salones");
+
+        HashMap<Integer, Salon> salones= new HashMap<>();
+
+        ManejoArchivos lector = new ManejoArchivos();
+
+        ArrayList<String> lineas = lector.leerArchivo("Salones.txt");
+
+        for (String linea : lineas) {
+
+            String[] aux = linea.split(";");
+            Salon salon = new Salon(Integer.parseInt(aux[0]), aux[1], Integer.parseInt(aux[2]));
+
+            salones.put(salon.getIdentifacador(), salon);
+
+        }
+
+        return salones;
+    }
+    
+
 }

@@ -7,13 +7,15 @@ package Pruebas;
 
 import Agente.Agente;
 import Agente.AgenteHorario.AgenteHorario;
+import Agente.AgenteHorario.Tiempo;
 import BusquedaLocal.EnfriamientoSimulado.EnfriamientoSimulado;
 import BusquedaLocal.ProblemaEnfriamiento.Solucion;
 import Evaluacion.Evaluador;
 import Evaluacion.EvaluadorAgenteHorario;
 import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
+import GestorArchivos.LectorArchivosHorarios;
 import Memetico.AlgoritmoMemetico;
-import Memetico.RTR;
+import Memetico.RTRHorariosUniversidad;
 import java.util.ArrayList;
 
 /**
@@ -27,11 +29,14 @@ public class Pruebas {
      */
     public static void main(String[] args) {
        AlgoritmoMemetico memetico = new AlgoritmoMemetico();
-     GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario();
+       LectorArchivosHorarios lector = new LectorArchivosHorarios();
+       GeneradorPoblacionAgenteHorario generador = new GeneradorPoblacionAgenteHorario(lector.leerCursos(),lector.leerSalonesSimple(),new Tiempo(),105);
+     
+
+//        ArrayList<Agente> agentes = generador.generarPoblacion(500);
+//        
 //
-//        ArrayList<Agente> agentes = generador.generarPoblacion(250);
-//
-//        System.out.println("Agentes " + agentes.size());
+//        //System.out.println("Agentes " + agentes.size());
 //        Evaluador evaluador = new EvaluadorAgenteHorario();
 //
 //        float mejor = Float.POSITIVE_INFINITY;
@@ -40,29 +45,33 @@ public class Pruebas {
 //        for (int i = 0; i < agentes.size(); i++) {
 //            Agente agente = agentes.get(i);
 //
-//            float evaluacion = evaluador.evaluar((AgenteHorario) agente);
+//            evaluador.evaluar((AgenteHorario) agente);
 //       
-//            agente.setEvaluacion(evaluacion);
+//           
 //            //System.out.println(evaluacion);
-//            if (evaluacion < mejor) {
+//            if (agente.getEvaluacionAgente()< mejor) {
 //                posicionMejor = i;
-//                mejor = evaluacion;
+//                mejor = agente.getEvaluacionAgente();
 //            }
 //            //System.out.println(evaluacion);
 //        }
-
-        EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
-
-//        Solucion solucion = (AgenteHorario) agentes.get(posicionMejor);
+//                
+//       
+//       
+//       EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
+//
+//       Solucion solucion = (AgenteHorario) agentes.get(posicionMejor);
 //
 //        System.out.println("Mejor generado : " + solucion.getEvaluacion());
 //   
 //
-//        Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion, 400);
+//        Solucion mejorado = (AgenteHorario) algoritmo.ejecutarAlgoritmo(solucion,10);
 //
 //        System.out.println("Mejora" + mejorado.getEvaluacion());
-        
-        memetico.ejecutar(generador, 10, 5, new RTR(), algoritmo);
+       
+       Evaluador evaluador = new EvaluadorAgenteHorario();
+        EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
+        memetico.ejecutar(generador, 600, 5, new RTRHorariosUniversidad(), algoritmo,evaluador);
 
     }
 

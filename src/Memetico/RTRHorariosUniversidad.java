@@ -15,20 +15,22 @@ import java.util.Random;
  *
  * @author acer_acer
  */
-public class RTR implements Recombinacion {
+public class RTRHorariosUniversidad implements Recombinacion {
 
     @Override
     public ArrayList<Agente> recombinacion(ArrayList<Agente> poblacion) {
         ArrayList<Agente> hijos = new ArrayList<>();
-        for (int i = 0; i < poblacion.size(); i += 2) {
+        for (int i = 0; i < poblacion.size(); i++) {
             Agente padre = poblacion.get(i);
-            Agente madre = poblacion.get(i + 1);
-            hijos.add(recombinar(padre, madre));
+            //Se cambió porque da indexofBoundException.
+            int madreRandom=(int) (Math.random() * poblacion.size() - 1);
+            Agente madre = poblacion.get(madreRandom);
+            hijos.add(recombinar((AgenteHorario)padre,(AgenteHorario) madre));
         }
         return hijos;
     }
 
-    private AgenteHorario recombinar(Agente padre, Agente madre) {
+    private AgenteHorario recombinar(AgenteHorario padre, AgenteHorario madre) {
         ArrayList<AsignacionHorario> asignaciones = new ArrayList();
         Random rnd = new Random();
 
@@ -45,7 +47,8 @@ public class RTR implements Recombinacion {
                 }
             }
         }
-        AgenteHorario agente = new AgenteHorario(asignaciones);
+        
+        AgenteHorario agente = new AgenteHorario(asignaciones,padre.getEvaluador(),padre.getGenerador());
         return agente;
     }
 

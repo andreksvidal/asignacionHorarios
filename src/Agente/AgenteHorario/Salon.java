@@ -21,6 +21,10 @@ public class Salon {
         this.cupoMaximo = cupoMaximo;
     }
 
+    public Salon() {
+       
+    }
+
     public int getCupoMaximo() {
         return cupoMaximo;
     }
