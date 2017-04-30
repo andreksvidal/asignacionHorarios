@@ -20,7 +20,11 @@ public class RTRHorariosUniversidad implements Recombinacion {
     @Override
     public ArrayList<Agente> recombinacion(ArrayList<Agente> poblacion) {
         ArrayList<Agente> hijos = new ArrayList<>();
+<<<<<<< HEAD:src/Memetico/RTRHorariosUniversidad.java
         for (int i = 0; i < poblacion.size(); i++) {
+=======
+        for (int i = 0; i < poblacion.size()-1; i += 2) {
+>>>>>>> origin/master:src/Memetico/RTR.java
             Agente padre = poblacion.get(i);
             //Se cambió porque da indexofBoundException.
             int madreRandom=(int) (Math.random() * poblacion.size() - 1);
