@@ -120,11 +120,26 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
             int hora = generarHoraAleatoria();
 
             //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
-            FranjaHoraria franja = asignacionVecino.getFranjasHorario().get(randomFranjas);
-            franja.setDia(dia);
-            franja.setHora(hora);
-                 
-            //asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
+            FranjaHoraria franja = new FranjaHoraria(dia, hora, asignacionVecino.getFranjasHorario().get(randomFranjas).getSalon());
+                   
+            boolean estaFranja=false;
+            
+              for (FranjaHoraria franjax : asignacionVecino.getFranjasHorario()) {
+                        if (franjax.compareToNoSalon(franja) == 0) {
+                            estaFranja = true;
+                           
+                            break;
+                        }
+              }
+            
+            if(!estaFranja)
+            {
+                asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
+            }
+            
+            
+            
+            
         }
 
         AgenteHorario vecino = new AgenteHorario(memesVecino, original.getEvaluador(),this);

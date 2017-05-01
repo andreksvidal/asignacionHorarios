@@ -106,9 +106,9 @@ public class GeneradorPoblacionAgenteHorarioJardin implements GeneradorPoblacion
 
     public int generarDiaAleatorio() {
 
-       int dia=(int) (Math.random() * this.tiempo.getDiasJardin().size());
-       
-       return dia;
+        int dia = (int) (Math.random() * this.tiempo.getDiasJardin().size());
+
+        return dia;
     }
 
     public int generarHoraAleatoria() {
@@ -158,11 +158,25 @@ public class GeneradorPoblacionAgenteHorarioJardin implements GeneradorPoblacion
             int hora = generarHoraAleatoria();
 
             //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
-            FranjaHoraria franja = asignacionVecino.getFranjasHorario().get(randomFranjas);
-           // franja.setDia(dia);
-            franja.setHora(hora);
+            FranjaHoraria franja = new FranjaHoraria(asignacionVecino.getFranjasHorario().get(randomFranjas).getDia(), hora, asignacionVecino.getFranjasHorario().get(randomFranjas).getSalon());
+            //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
+            // FranjaHoraria franja = asignacionVecino.getFranjasHorario().get(randomFranjas);
+            // franja.setDia(dia);
+            // franja.setHora(hora);
+            boolean estaFranja = false;
 
-            //asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
+            for (FranjaHoraria franjax : asignacionVecino.getFranjasHorario()) {
+                if (franjax.compareToNoSalon(franja) == 0) {
+                    estaFranja = true;
+
+                    break;
+                }
+            }
+
+            if (!estaFranja) {
+                asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
+            }
+
         }
 
         AgenteHorarioJardin vecino = new AgenteHorarioJardin(memesVecino, original.getEvaluador(), this);
