@@ -23,7 +23,7 @@ public class LectorArchivosHorarios {
         HashMap<Integer, Curso> cursos = new HashMap();
 
         ManejoArchivos lector = new ManejoArchivos();
-        ArrayList<String> lineas = lector.leerArchivo("CursoProfesor.txt");
+        ArrayList<String> lineas = lector.leerArchivo("CursoProfesorSinPD.txt");
         for (String linea : lineas) {
             String[] aux = linea.split(";");
             Curso curso = new Curso(Integer.parseInt(aux[0]), aux[1], aux[2], Integer.parseInt(aux[3]), Integer.parseInt(aux[4]), aux[5], Integer.parseInt(aux[6]), aux[7]);
