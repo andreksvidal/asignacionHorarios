@@ -1,15 +1,15 @@
-1;Ingles Pre Jardin;T;4;1;MARIA
-2;Matematicas  Pre Jardin;T;4;1;PEDRO
-3;Musica Pre Jardin;T;4;1;JUAN
-4;Lectura-Escritura Pre Jardin;T;4;1;ANA
-5;Estetica Pre Jardin;T;4;1;JOSÉ
-6;Ingles Jardin;T;4;2;MARIA
-7;Matematicas Jardin;T;4;2;PEDRO
-8;Musica Jardin;T;4;2;JUAN
-9;Lectura-Escritura Jardin;T;4;2;ANA
-10;Estetica Jardin;T;4;2;JOSE
-11;Ingles Trans;T;4;3;MARIA
-12;Matematicas Trans;T;4;3;PEDRO
-13;Musica Trans;T;4;3;JUAN
-14;Lectura-Escritura Trans;T;4;3;ANA
-15;Estetica Trans;T;4;3;JOSE
+1;Ingles Pre Jardin;A;4;1;T;20;MARIA
+2;Matematicas  Pre Jardin;A;4;1;T;20;PEDRO
+3;Musica Pre Jardin;A;4;1;T;20;JUAN
+4;Lectura-Escritura Pre Jardin;A;4;1;T;20;ANA
+5;Estetica Pre Jardin;A;4;1;T;20;JOSE
+6;Ingles Jardin;A;4;2;T;20;MARIA
+7;Matematicas Jardin;A;4;2;T;20;PEDRO
+8;Musica Jardin;A;4;2;T;20;JUAN
+9;Lectura-Escritura Jardin;A;4;2;T;20;ANA
+10;Estetica Jardin;A;4;2;T;20;JOSE
+11;Ingles Trans;A;4;3;T;20;MARIA
+12;Matematicas Trans;A;4;3;T;20;PEDRO
+13;Musica Trans;A;4;3;T;20;JUAN
+14;Lectura-Escritura Trans;A;4;3;T;20;ANA
+15;Estetica Trans;A;4;3;T;20;JOSE
