@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Memetico;
 
 import Agente.Agente;
@@ -14,15 +13,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * 
- * @author Andres Vidal Zemanate
-/* FIET-Ingenieria de Sistemas
+ *
+ * @author acer_acer
  */
-public class RTRHorariosUniversidad implements Recombinacion{
+public class RTRHorariosJardin implements Recombinacion {
 
-    
-    
-     @Override
+    @Override
     public ArrayList<Agente> recombinacion(ArrayList<Agente> poblacion) {
         ArrayList<Agente> hijos = new ArrayList<>();
 
@@ -32,13 +28,12 @@ public class RTRHorariosUniversidad implements Recombinacion{
             //Se cambió porque da indexofBoundException.
             int madreRandom=(int) (Math.random() * poblacion.size() - 1);
             Agente madre = poblacion.get(madreRandom);
-            hijos.add(recombinar((AgenteHorario)padre,(AgenteHorario) madre));
+            hijos.add(recombinar((AgenteHorarioJardin)padre,(AgenteHorarioJardin) madre));
         }
         return hijos;
     }
-    
-    
-    private AgenteHorario recombinar(AgenteHorario padre, AgenteHorario madre) {
+
+    private AgenteHorarioJardin recombinar(AgenteHorarioJardin padre, AgenteHorarioJardin madre) {
         ArrayList<AsignacionHorario> asignaciones = new ArrayList();
         Random rnd = new Random();
 
@@ -56,8 +51,8 @@ public class RTRHorariosUniversidad implements Recombinacion{
             }
         }
         
-        AgenteHorario agente = new AgenteHorario(asignaciones,padre.getEvaluador(),padre.getGenerador());
+        AgenteHorarioJardin agente = new AgenteHorarioJardin(asignaciones,padre.getEvaluador(),padre.getGenerador());
         return agente;
     }
-    
+
 }

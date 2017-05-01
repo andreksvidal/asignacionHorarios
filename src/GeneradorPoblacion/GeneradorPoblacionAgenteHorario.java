@@ -52,7 +52,7 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
         ArrayList<AsignacionHorario> asignaciones = new ArrayList();
         /*PARA CADA UNO DE LOS Cursos disponibles*/
 
-        for (int i = 1; i <= cursosTotales; i++) {
+        for (int i = 1; i < cursosTotales; i++) {
 
             Curso curso = this.cursosDisponibles.get(i);
 
@@ -165,28 +165,31 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
 
     public int generarDiaAleatorio() {
 
-        return  (int) (Math.random() * this.tiempo.getDiasUniversidad().size() - 1);
+        return  (int) (Math.random() * this.tiempo.getDiasUniversidad().size());
         
 
     }
 
     public int generarHoraAleatoria() {
-        int randomHora = (int) (Math.random() * this.tiempo.getHorasUniversidad().size() - 1);
+        int randomHora = (int) (Math.random() * this.tiempo.getHorasUniversidad().size());
 
         return tiempo.getHorasUniversidad().get(randomHora);
     }
 
     public Salon generarSalonValido(Curso curso) {
-        int randomSalon = (int) ((Math.random() * this.salones.size()) + 1);
+        int randomSalon = (int) ((Math.random() * this.salones.size()))+1;
 
+        
         Salon salon = salones.get(randomSalon);
-
+        
+      
         while (!salonEsValidoParaCurso(salon, curso)) {
 
-            randomSalon = (int) ((Math.random() * this.salones.size()) + 1);
+            randomSalon = (int) ((Math.random() * this.salones.size()))+1;
             salon = salones.get(randomSalon);
         }
-
+        
+        
         return salon;
     }
 
