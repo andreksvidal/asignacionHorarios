@@ -62,8 +62,6 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
                 ArrayList<FranjaHoraria> franjas = new ArrayList();
 
                 //para cada una de las franjas necesarias hacer:
-                int franjasGeneradas = 0;
-
                 while (franjas.size() < franjasNecesarias) {
 
                     //obtener aleatoriamente un  dia y hora.
@@ -110,7 +108,7 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
         ArrayList memesVecino = new ArrayList();
         memesVecino = (ArrayList<AgenteHorario>) original.getMemes().clone();
 
-        ArrayList<Integer> asignacionesCambiar = generarCursosCambiar(20, memesVecino.size());//El 10 indica el numero de cursos al que se le cambian las flanjas.
+        ArrayList<Integer> asignacionesCambiar = generarCursosCambiar(10, memesVecino.size());//El 10 indica el numero de cursos al que se le cambian las flanjas.
 
         for (int numCambio = 0; numCambio < asignacionesCambiar.size(); numCambio++) {
 
@@ -122,9 +120,11 @@ public class GeneradorPoblacionAgenteHorario implements GeneradorPoblacion {
             int hora = generarHoraAleatoria();
 
             //Una vez con todos los parametros correctos, se crea una franja horaria pra ese salon.
-            FranjaHoraria franja = new FranjaHoraria(dia, hora, asignacionVecino.getFranjasHorario().get(randomFranjas).getSalon());
-
-            asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
+            FranjaHoraria franja = asignacionVecino.getFranjasHorario().get(randomFranjas);
+            franja.setDia(dia);
+            franja.setHora(hora);
+                 
+            //asignacionVecino.getFranjasHorario().set(randomFranjas, franja);
         }
 
         AgenteHorario vecino = new AgenteHorario(memesVecino, original.getEvaluador(),this);
