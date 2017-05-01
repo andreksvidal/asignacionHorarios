@@ -2,7 +2,7 @@
 2;Matematicas  Pre Jardin;A;4;1;T;20;PEDRO
 3;Musica Pre Jardin;A;4;1;T;20;JUAN
 4;Lectura-Escritura Pre Jardin;A;4;1;T;20;ANA
-5;Estetica Pre Jardin;A;4;1;T;20;JOSÉ
+5;Estetica Pre Jardin;A;4;1;T;20;JOSE
 6;Ingles Jardin;A;4;2;T;20;MARIA
 7;Matematicas Jardin;A;4;2;T;20;PEDRO
 8;Musica Jardin;A;4;2;T;20;JUAN
