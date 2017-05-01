@@ -26,14 +26,36 @@ public class LectorArchivosHorarios {
         ArrayList<String> lineas = lector.leerArchivo("CursoProfesorSinPD.txt");
         for (String linea : lineas) {
             String[] aux = linea.split(";");
-            Curso curso = new Curso(Integer.parseInt(aux[0]), aux[1], aux[2], Integer.parseInt(aux[3]), Integer.parseInt(aux[4]), aux[5], Integer.parseInt(aux[6]), aux[7]);
+            
+            String tipo= aux[5];
+            
+            int codigoTipo=-1;
+            
+            switch(tipo)
+            {
+                case "T":
+                    codigoTipo=1;
+                    break;
+                case "P":
+                    codigoTipo=2;
+                    break;
+                case "TP":
+                     codigoTipo=3;
+                    break;
+                case "L":
+                      codigoTipo=4;
+                    break;
+            }
+            
+            
+            Curso curso = new Curso(Integer.parseInt(aux[0]), aux[1], aux[2], Integer.parseInt(aux[3]), Integer.parseInt(aux[4]), codigoTipo, Integer.parseInt(aux[6]), aux[7]);
             cursos.put(curso.getId(), curso);
         }
 
         return cursos;
     }
 
-    public HashMap<String, HashMap<Integer, Salon>> leerSalones() {
+   /* public HashMap<String, HashMap<Integer, Salon>> leerSalones() {
 
         System.out.println("invocado leer salones");
 
@@ -61,7 +83,7 @@ public class LectorArchivosHorarios {
         }
 
         return contenedor;
-    }
+    }*/
     
     
     public HashMap<Integer, Salon> leerSalonesSimple() {
@@ -77,7 +99,25 @@ public class LectorArchivosHorarios {
         for (String linea : lineas) {
 
             String[] aux = linea.split(";");
-            Salon salon = new Salon(Integer.parseInt(aux[0]), aux[1], Integer.parseInt(aux[2]));
+            
+            String tipo=aux[1];
+            
+            int codigoTipo=-1;
+            
+            switch (tipo)
+            {
+                case "T":
+                    codigoTipo=1;
+                    break;
+                case "P":
+                    codigoTipo=2;
+                    break;
+                case "L":
+                    codigoTipo=3;
+                    break;
+            }
+            
+            Salon salon = new Salon(Integer.parseInt(aux[0]), codigoTipo, Integer.parseInt(aux[2]));
 
             salones.put(salon.getIdentifacador(), salon);
 

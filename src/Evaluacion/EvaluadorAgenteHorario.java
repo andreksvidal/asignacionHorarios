@@ -91,6 +91,24 @@ public class EvaluadorAgenteHorario implements Evaluador {
                     sumaPenalizaciones += 5;
                }
                
+               
+               if((asignacionActual.getCurso().getTipo()==4)&& (franjaAsigActual.getSalon().getTipo()==1))
+               {
+                   sumaPenalizaciones +=2;
+               }
+                 
+               if((asignacionActual.getCurso().getTipo()==2) && (franjaAsigActual.getSalon().getTipo()!=2))
+               {
+                   sumaPenalizaciones +=2;
+               }
+               
+               if(asignacionActual.getCurso().getTipo()==4 && franjaAsigActual.getSalon().getTipo()==3)
+               {
+                   sumaPenalizaciones +=2;
+               }
+               
+             
+               
             }
         }
         

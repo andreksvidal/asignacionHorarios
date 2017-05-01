@@ -12,10 +12,10 @@ package Agente.AgenteHorario;
 public class Salon {
 
     private int identifacador;
-    private String tipo;
+    private int tipo;
     private int cupoMaximo;
 
-    public Salon(int identifacador, String tipo, int cupoMaximo) {
+    public Salon(int identifacador, int tipo, int cupoMaximo) {
         this.identifacador = identifacador;
         this.tipo = tipo;
         this.cupoMaximo = cupoMaximo;
@@ -41,14 +41,16 @@ public class Salon {
         this.identifacador = identifacador;
     }
 
-   
-
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+
+   
+
+   
 
 }

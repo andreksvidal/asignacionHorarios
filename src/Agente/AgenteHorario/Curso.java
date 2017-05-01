@@ -18,9 +18,9 @@ public class Curso {
     private int semestre;
     private int cupoMaximo;
     private String profesorImparte;
-    private String tipo;
+    private int tipo;
 
-    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre, String tipo, int cupoMaximo, String profesor) {
+    public Curso(int id, String nombreCurso, String grupo, int horas, int semestre, int tipo, int cupoMaximo, String profesor) {
         this.nombreCurso = nombreCurso;
         this.id = id;
         this.grupo = grupo;
@@ -39,13 +39,15 @@ public class Curso {
         this.profesorImparte = profesorImparte;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+
+   
 
     public String getNombreCurso() {
         return nombreCurso;
