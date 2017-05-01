@@ -108,10 +108,6 @@ public class AlgoritmoMemetico {
     }
     
     
-    
-    
-    
-
     private List<Agente> actualizarPoblacion(int tamPob, ArrayList<Agente> poblacion, ArrayList<Agente> nuevaPoblacion) {
         ArrayList<Agente> unionPoblacion = new ArrayList<>();
         unionPoblacion.addAll(poblacion);
