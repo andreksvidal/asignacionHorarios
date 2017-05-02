@@ -32,7 +32,7 @@ import javax.swing.SwingConstants;
  *
  * @author acer_acer
  */
-public class GUIHorarios extends javax.swing.JDialog {
+public class GUIHorarios extends javax.swing.JFrame {
 
     /**
      * Creates new form GUIHorarios
@@ -43,8 +43,7 @@ public class GUIHorarios extends javax.swing.JDialog {
     Evaluador evaluador;
     EnfriamientoSimulado algoritmo;
 
-    public GUIHorarios(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public GUIHorarios() {
         initComponents();
         this.setSize(851, 500);
         memetico = new AlgoritmoMemetico();
@@ -52,7 +51,7 @@ public class GUIHorarios extends javax.swing.JDialog {
         generador = new GeneradorPoblacionAgenteHorario(lector.leerCursos(), lector.leerSalonesSimple(), new Tiempo(), 105);
         evaluador = new EvaluadorAgenteHorario();
         algoritmo = new EnfriamientoSimulado();
-       cargarValores();
+        cargarValores();
     }
 
     /**
@@ -97,6 +96,38 @@ public class GUIHorarios extends javax.swing.JDialog {
         a29 = new javax.swing.JTextArea();
         a30 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        pnlSem2 = new javax.swing.JPanel();
+        a31 = new javax.swing.JTextArea();
+        a32 = new javax.swing.JTextArea();
+        a33 = new javax.swing.JTextArea();
+        a34 = new javax.swing.JTextArea();
+        a35 = new javax.swing.JTextArea();
+        a36 = new javax.swing.JTextArea();
+        a37 = new javax.swing.JTextArea();
+        a38 = new javax.swing.JTextArea();
+        a39 = new javax.swing.JTextArea();
+        a40 = new javax.swing.JTextArea();
+        a41 = new javax.swing.JTextArea();
+        a42 = new javax.swing.JTextArea();
+        a43 = new javax.swing.JTextArea();
+        a44 = new javax.swing.JTextArea();
+        a45 = new javax.swing.JTextArea();
+        a46 = new javax.swing.JTextArea();
+        a47 = new javax.swing.JTextArea();
+        a48 = new javax.swing.JTextArea();
+        a49 = new javax.swing.JTextArea();
+        a50 = new javax.swing.JTextArea();
+        a51 = new javax.swing.JTextArea();
+        a52 = new javax.swing.JTextArea();
+        a53 = new javax.swing.JTextArea();
+        a54 = new javax.swing.JTextArea();
+        a55 = new javax.swing.JTextArea();
+        a56 = new javax.swing.JTextArea();
+        a57 = new javax.swing.JTextArea();
+        a58 = new javax.swing.JTextArea();
+        a59 = new javax.swing.JTextArea();
+        a60 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -351,6 +382,254 @@ public class GUIHorarios extends javax.swing.JDialog {
 
         tablaTabs.addTab("Semestre 1", pnlSem1);
 
+        pnlSem2.setLayout(null);
+
+        a31.setEditable(false);
+        a31.setColumns(20);
+        a31.setRows(5);
+        a31.setBorder(null);
+        a31.setOpaque(false);
+        pnlSem2.add(a31);
+        a31.setBounds(180, 80, 100, 40);
+
+        a32.setEditable(false);
+        a32.setColumns(20);
+        a32.setRows(5);
+        a32.setBorder(null);
+        a32.setOpaque(false);
+        pnlSem2.add(a32);
+        a32.setBounds(290, 80, 100, 40);
+
+        a33.setEditable(false);
+        a33.setColumns(20);
+        a33.setRows(5);
+        a33.setBorder(null);
+        a33.setOpaque(false);
+        pnlSem2.add(a33);
+        a33.setBounds(400, 80, 100, 40);
+
+        a34.setEditable(false);
+        a34.setColumns(20);
+        a34.setRows(5);
+        a34.setBorder(null);
+        a34.setOpaque(false);
+        pnlSem2.add(a34);
+        a34.setBounds(500, 80, 100, 40);
+
+        a35.setEditable(false);
+        a35.setColumns(20);
+        a35.setRows(5);
+        a35.setBorder(null);
+        a35.setOpaque(false);
+        pnlSem2.add(a35);
+        a35.setBounds(610, 80, 100, 40);
+
+        a36.setEditable(false);
+        a36.setColumns(20);
+        a36.setRows(5);
+        a36.setBorder(null);
+        a36.setOpaque(false);
+        pnlSem2.add(a36);
+        a36.setBounds(180, 130, 100, 40);
+
+        a37.setEditable(false);
+        a37.setColumns(20);
+        a37.setRows(5);
+        a37.setBorder(null);
+        a37.setOpaque(false);
+        pnlSem2.add(a37);
+        a37.setBounds(290, 130, 100, 40);
+
+        a38.setEditable(false);
+        a38.setColumns(20);
+        a38.setRows(5);
+        a38.setBorder(null);
+        a38.setOpaque(false);
+        pnlSem2.add(a38);
+        a38.setBounds(400, 130, 100, 40);
+
+        a39.setEditable(false);
+        a39.setColumns(20);
+        a39.setRows(5);
+        a39.setBorder(null);
+        a39.setOpaque(false);
+        pnlSem2.add(a39);
+        a39.setBounds(500, 130, 100, 40);
+
+        a40.setEditable(false);
+        a40.setColumns(20);
+        a40.setRows(5);
+        a40.setBorder(null);
+        a40.setOpaque(false);
+        pnlSem2.add(a40);
+        a40.setBounds(610, 130, 100, 40);
+
+        a41.setEditable(false);
+        a41.setColumns(20);
+        a41.setRows(5);
+        a41.setBorder(null);
+        a41.setOpaque(false);
+        pnlSem2.add(a41);
+        a41.setBounds(180, 180, 100, 40);
+
+        a42.setEditable(false);
+        a42.setColumns(20);
+        a42.setRows(5);
+        a42.setBorder(null);
+        a42.setOpaque(false);
+        pnlSem2.add(a42);
+        a42.setBounds(290, 180, 100, 40);
+
+        a43.setEditable(false);
+        a43.setColumns(20);
+        a43.setRows(5);
+        a43.setBorder(null);
+        a43.setOpaque(false);
+        pnlSem2.add(a43);
+        a43.setBounds(400, 180, 100, 40);
+
+        a44.setEditable(false);
+        a44.setColumns(20);
+        a44.setRows(5);
+        a44.setBorder(null);
+        a44.setOpaque(false);
+        pnlSem2.add(a44);
+        a44.setBounds(500, 180, 100, 40);
+
+        a45.setEditable(false);
+        a45.setColumns(20);
+        a45.setRows(5);
+        a45.setBorder(null);
+        a45.setOpaque(false);
+        pnlSem2.add(a45);
+        a45.setBounds(610, 180, 100, 40);
+
+        a46.setEditable(false);
+        a46.setColumns(20);
+        a46.setRows(5);
+        a46.setBorder(null);
+        a46.setOpaque(false);
+        pnlSem2.add(a46);
+        a46.setBounds(180, 230, 100, 40);
+
+        a47.setEditable(false);
+        a47.setColumns(20);
+        a47.setRows(5);
+        a47.setBorder(null);
+        a47.setOpaque(false);
+        pnlSem2.add(a47);
+        a47.setBounds(290, 230, 100, 40);
+
+        a48.setEditable(false);
+        a48.setColumns(20);
+        a48.setRows(5);
+        a48.setBorder(null);
+        a48.setOpaque(false);
+        pnlSem2.add(a48);
+        a48.setBounds(400, 230, 100, 40);
+
+        a49.setEditable(false);
+        a49.setColumns(20);
+        a49.setRows(5);
+        a49.setBorder(null);
+        a49.setOpaque(false);
+        pnlSem2.add(a49);
+        a49.setBounds(500, 230, 100, 40);
+
+        a50.setEditable(false);
+        a50.setColumns(20);
+        a50.setRows(5);
+        a50.setBorder(null);
+        a50.setOpaque(false);
+        pnlSem2.add(a50);
+        a50.setBounds(610, 230, 100, 40);
+
+        a51.setEditable(false);
+        a51.setColumns(20);
+        a51.setRows(5);
+        a51.setBorder(null);
+        a51.setOpaque(false);
+        pnlSem2.add(a51);
+        a51.setBounds(180, 280, 100, 40);
+
+        a52.setEditable(false);
+        a52.setColumns(20);
+        a52.setRows(5);
+        a52.setBorder(null);
+        a52.setOpaque(false);
+        pnlSem2.add(a52);
+        a52.setBounds(290, 280, 100, 40);
+
+        a53.setEditable(false);
+        a53.setColumns(20);
+        a53.setRows(5);
+        a53.setBorder(null);
+        a53.setOpaque(false);
+        pnlSem2.add(a53);
+        a53.setBounds(400, 280, 100, 40);
+
+        a54.setEditable(false);
+        a54.setColumns(20);
+        a54.setRows(5);
+        a54.setBorder(null);
+        a54.setOpaque(false);
+        pnlSem2.add(a54);
+        a54.setBounds(500, 280, 100, 40);
+
+        a55.setEditable(false);
+        a55.setColumns(20);
+        a55.setRows(5);
+        a55.setBorder(null);
+        a55.setOpaque(false);
+        pnlSem2.add(a55);
+        a55.setBounds(610, 280, 100, 40);
+
+        a56.setEditable(false);
+        a56.setColumns(20);
+        a56.setRows(5);
+        a56.setBorder(null);
+        a56.setOpaque(false);
+        pnlSem2.add(a56);
+        a56.setBounds(180, 330, 100, 40);
+
+        a57.setEditable(false);
+        a57.setColumns(20);
+        a57.setRows(5);
+        a57.setBorder(null);
+        a57.setOpaque(false);
+        pnlSem2.add(a57);
+        a57.setBounds(290, 330, 100, 40);
+
+        a58.setEditable(false);
+        a58.setColumns(20);
+        a58.setRows(5);
+        a58.setBorder(null);
+        a58.setOpaque(false);
+        pnlSem2.add(a58);
+        a58.setBounds(400, 330, 100, 40);
+
+        a59.setEditable(false);
+        a59.setColumns(20);
+        a59.setRows(5);
+        a59.setBorder(null);
+        a59.setOpaque(false);
+        pnlSem2.add(a59);
+        a59.setBounds(500, 330, 100, 40);
+
+        a60.setEditable(false);
+        a60.setColumns(20);
+        a60.setRows(5);
+        a60.setBorder(null);
+        a60.setOpaque(false);
+        pnlSem2.add(a60);
+        a60.setBounds(610, 330, 100, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
+        pnlSem2.add(jLabel2);
+        jLabel2.setBounds(20, 0, 760, 420);
+
+        tablaTabs.addTab("Semestre 1", pnlSem2);
+
         getContentPane().add(tablaTabs);
         tablaTabs.setBounds(0, 0, 840, 460);
 
@@ -368,14 +647,34 @@ public class GUIHorarios extends javax.swing.JDialog {
             String informacion;
             for (int j = 0; j < horario.getFranjasHorario().size(); j++) {
                 informacion = horario.getCurso().getNombreCurso() + "-" + horario.getCurso().getGrupo();
-                pos=posicionHorario(horario.getFranjasHorario().get(j).getDia(), horario.getFranjasHorario().get(j).getHora());
-                JTextArea tmp=(JTextArea)asList.get(pos);
-                informacion+="-"+horario.getFranjasHorario().get(j).getSalon().getIdentifacador();
+                pos = posicionHorario(horario.getFranjasHorario().get(j).getDia(), horario.getFranjasHorario().get(j).getHora());
+                JTextArea tmp = (JTextArea) asList.get(pos);
+                informacion += "-" + horario.getFranjasHorario().get(j).getSalon().getIdentifacador();
                 tmp.setFont(new Font("Arial", Font.PLAIN, 12));
-                if("".equals(tmp.getText())){
+                if ("".equals(tmp.getText())) {
                     tmp.setText(informacion);
-                }else{
-                    tmp.setText(tmp.getText()+"\n"+informacion);
+                } else {
+                    tmp.setText(tmp.getText() + "\n" + informacion);
+                }
+            }
+        }
+        //Semestre 2
+        components = pnlSem2.getComponents();
+        asList = Arrays.asList(components);
+        for (int i = 16; i < 5; i++) {
+            int pos;
+            AsignacionHorario horario = (AsignacionHorario) memes.get(i);
+            String informacion;
+            for (int j = 0; j < horario.getFranjasHorario().size(); j++) {
+                informacion = horario.getCurso().getNombreCurso() + "-" + horario.getCurso().getGrupo();
+                pos = posicionHorario(horario.getFranjasHorario().get(j).getDia(), horario.getFranjasHorario().get(j).getHora());
+                JTextArea tmp = (JTextArea) asList.get(pos);
+                informacion += "-" + horario.getFranjasHorario().get(j).getSalon().getIdentifacador();
+                tmp.setFont(new Font("Arial", Font.PLAIN, 12));
+                if ("".equals(tmp.getText())) {
+                    tmp.setText(informacion);
+                } else {
+                    tmp.setText(tmp.getText() + "\n" + informacion);
                 }
             }
         }
@@ -443,17 +742,10 @@ public class GUIHorarios extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                GUIHorarios dialog = new GUIHorarios(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new GUIHorarios().setVisible(true);
             }
         });
     }
@@ -483,14 +775,46 @@ public class GUIHorarios extends javax.swing.JDialog {
     private javax.swing.JTextArea a29;
     private javax.swing.JTextArea a3;
     private javax.swing.JTextArea a30;
+    private javax.swing.JTextArea a31;
+    private javax.swing.JTextArea a32;
+    private javax.swing.JTextArea a33;
+    private javax.swing.JTextArea a34;
+    private javax.swing.JTextArea a35;
+    private javax.swing.JTextArea a36;
+    private javax.swing.JTextArea a37;
+    private javax.swing.JTextArea a38;
+    private javax.swing.JTextArea a39;
     private javax.swing.JTextArea a4;
+    private javax.swing.JTextArea a40;
+    private javax.swing.JTextArea a41;
+    private javax.swing.JTextArea a42;
+    private javax.swing.JTextArea a43;
+    private javax.swing.JTextArea a44;
+    private javax.swing.JTextArea a45;
+    private javax.swing.JTextArea a46;
+    private javax.swing.JTextArea a47;
+    private javax.swing.JTextArea a48;
+    private javax.swing.JTextArea a49;
     private javax.swing.JTextArea a5;
+    private javax.swing.JTextArea a50;
+    private javax.swing.JTextArea a51;
+    private javax.swing.JTextArea a52;
+    private javax.swing.JTextArea a53;
+    private javax.swing.JTextArea a54;
+    private javax.swing.JTextArea a55;
+    private javax.swing.JTextArea a56;
+    private javax.swing.JTextArea a57;
+    private javax.swing.JTextArea a58;
+    private javax.swing.JTextArea a59;
     private javax.swing.JTextArea a6;
+    private javax.swing.JTextArea a60;
     private javax.swing.JTextArea a7;
     private javax.swing.JTextArea a8;
     private javax.swing.JTextArea a9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel pnlSem1;
+    private javax.swing.JPanel pnlSem2;
     private javax.swing.JTabbedPane tablaTabs;
     // End of variables declaration//GEN-END:variables
 
