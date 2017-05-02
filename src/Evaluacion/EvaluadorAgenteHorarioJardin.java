@@ -84,7 +84,7 @@ public class EvaluadorAgenteHorarioJardin  implements Evaluador{
                     }
                 }
                 
-               if(franjaAsigActual.equals(franjaAsigVecina))
+               if(franjaAsigActual.compareTo(franjaAsigVecina)==0)
                {
                     sumaPenalizaciones += 5;
                }    

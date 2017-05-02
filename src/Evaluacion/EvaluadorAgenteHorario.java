@@ -86,7 +86,7 @@ public class EvaluadorAgenteHorario implements Evaluador {
                     }
                 }
                 
-               if(franjaAsigActual.equals(franjaAsigVecina))
+               if(franjaAsigActual.compareTo(franjaAsigVecina)==0)
                {
                     sumaPenalizaciones += 5;
                }
