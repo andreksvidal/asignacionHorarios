@@ -5,11 +5,27 @@
  */
 package Interfaz;
 
+import Agente.Agente;
+import Agente.AgenteHorario.AsignacionHorario;
+import Agente.AgenteHorario.Tiempo;
+import BusquedaLocal.EnfriamientoSimulado.EnfriamientoSimulado;
+import Evaluacion.Evaluador;
+import Evaluacion.EvaluadorAgenteHorario;
+import GeneradorPoblacion.GeneradorPoblacionAgenteHorario;
+import GestorArchivos.LectorArchivosHorarios;
+import Memetico.AlgoritmoMemetico;
+import Memetico.RTRHorariosUniversidad;
+import java.awt.Component;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 /**
@@ -21,11 +37,22 @@ public class GUIHorarios extends javax.swing.JDialog {
     /**
      * Creates new form GUIHorarios
      */
+    AlgoritmoMemetico memetico;
+    LectorArchivosHorarios lector;
+    GeneradorPoblacionAgenteHorario generador;
+    Evaluador evaluador;
+    EnfriamientoSimulado algoritmo;
+
     public GUIHorarios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setSize(851, 500);
-        cargarValores();
+        memetico = new AlgoritmoMemetico();
+        lector = new LectorArchivosHorarios();
+        generador = new GeneradorPoblacionAgenteHorario(lector.leerCursos(), lector.leerSalonesSimple(), new Tiempo(), 105);
+        evaluador = new EvaluadorAgenteHorario();
+        algoritmo = new EnfriamientoSimulado();
+       cargarValores();
     }
 
     /**
@@ -37,1371 +64,356 @@ public class GUIHorarios extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tablaTabs = new javax.swing.JTabbedPane();
         pnlSem1 = new javax.swing.JPanel();
-        a1 = new javax.swing.JLabel();
-        a2 = new javax.swing.JLabel();
-        a3 = new javax.swing.JLabel();
-        a4 = new javax.swing.JLabel();
-        a5 = new javax.swing.JLabel();
-        a6 = new javax.swing.JLabel();
-        a7 = new javax.swing.JLabel();
-        a8 = new javax.swing.JLabel();
-        a9 = new javax.swing.JLabel();
-        a10 = new javax.swing.JLabel();
-        a11 = new javax.swing.JLabel();
-        a12 = new javax.swing.JLabel();
-        a13 = new javax.swing.JLabel();
-        a14 = new javax.swing.JLabel();
-        a15 = new javax.swing.JLabel();
-        a16 = new javax.swing.JLabel();
-        a17 = new javax.swing.JLabel();
-        a18 = new javax.swing.JLabel();
-        a19 = new javax.swing.JLabel();
-        a20 = new javax.swing.JLabel();
-        a21 = new javax.swing.JLabel();
-        a22 = new javax.swing.JLabel();
-        a23 = new javax.swing.JLabel();
-        a24 = new javax.swing.JLabel();
-        a25 = new javax.swing.JLabel();
+        a1 = new javax.swing.JTextArea();
+        a2 = new javax.swing.JTextArea();
+        a3 = new javax.swing.JTextArea();
+        a4 = new javax.swing.JTextArea();
+        a5 = new javax.swing.JTextArea();
+        a6 = new javax.swing.JTextArea();
+        a7 = new javax.swing.JTextArea();
+        a8 = new javax.swing.JTextArea();
+        a9 = new javax.swing.JTextArea();
+        a10 = new javax.swing.JTextArea();
+        a11 = new javax.swing.JTextArea();
+        a12 = new javax.swing.JTextArea();
+        a13 = new javax.swing.JTextArea();
+        a14 = new javax.swing.JTextArea();
+        a15 = new javax.swing.JTextArea();
+        a16 = new javax.swing.JTextArea();
+        a17 = new javax.swing.JTextArea();
+        a18 = new javax.swing.JTextArea();
+        a19 = new javax.swing.JTextArea();
+        a20 = new javax.swing.JTextArea();
+        a21 = new javax.swing.JTextArea();
+        a22 = new javax.swing.JTextArea();
+        a23 = new javax.swing.JTextArea();
+        a24 = new javax.swing.JTextArea();
+        a25 = new javax.swing.JTextArea();
+        a26 = new javax.swing.JTextArea();
+        a27 = new javax.swing.JTextArea();
+        a28 = new javax.swing.JTextArea();
+        a29 = new javax.swing.JTextArea();
+        a30 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        pnlSem2 = new javax.swing.JPanel();
-        a26 = new javax.swing.JLabel();
-        a27 = new javax.swing.JLabel();
-        a28 = new javax.swing.JLabel();
-        a29 = new javax.swing.JLabel();
-        a30 = new javax.swing.JLabel();
-        a31 = new javax.swing.JLabel();
-        a32 = new javax.swing.JLabel();
-        a33 = new javax.swing.JLabel();
-        a34 = new javax.swing.JLabel();
-        a35 = new javax.swing.JLabel();
-        a36 = new javax.swing.JLabel();
-        a37 = new javax.swing.JLabel();
-        a38 = new javax.swing.JLabel();
-        a39 = new javax.swing.JLabel();
-        a40 = new javax.swing.JLabel();
-        a41 = new javax.swing.JLabel();
-        a42 = new javax.swing.JLabel();
-        a43 = new javax.swing.JLabel();
-        a44 = new javax.swing.JLabel();
-        a45 = new javax.swing.JLabel();
-        a46 = new javax.swing.JLabel();
-        a47 = new javax.swing.JLabel();
-        a48 = new javax.swing.JLabel();
-        a49 = new javax.swing.JLabel();
-        a50 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        pnlSem3 = new javax.swing.JPanel();
-        a51 = new javax.swing.JLabel();
-        a52 = new javax.swing.JLabel();
-        a53 = new javax.swing.JLabel();
-        a54 = new javax.swing.JLabel();
-        a55 = new javax.swing.JLabel();
-        a56 = new javax.swing.JLabel();
-        a57 = new javax.swing.JLabel();
-        a58 = new javax.swing.JLabel();
-        a59 = new javax.swing.JLabel();
-        a60 = new javax.swing.JLabel();
-        a61 = new javax.swing.JLabel();
-        a62 = new javax.swing.JLabel();
-        a63 = new javax.swing.JLabel();
-        a64 = new javax.swing.JLabel();
-        a65 = new javax.swing.JLabel();
-        a66 = new javax.swing.JLabel();
-        a67 = new javax.swing.JLabel();
-        a68 = new javax.swing.JLabel();
-        a69 = new javax.swing.JLabel();
-        a70 = new javax.swing.JLabel();
-        a71 = new javax.swing.JLabel();
-        a72 = new javax.swing.JLabel();
-        a73 = new javax.swing.JLabel();
-        a74 = new javax.swing.JLabel();
-        a75 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        pnlSem4 = new javax.swing.JPanel();
-        a76 = new javax.swing.JLabel();
-        a77 = new javax.swing.JLabel();
-        a78 = new javax.swing.JLabel();
-        a79 = new javax.swing.JLabel();
-        a80 = new javax.swing.JLabel();
-        a81 = new javax.swing.JLabel();
-        a82 = new javax.swing.JLabel();
-        a83 = new javax.swing.JLabel();
-        a84 = new javax.swing.JLabel();
-        a85 = new javax.swing.JLabel();
-        a86 = new javax.swing.JLabel();
-        a87 = new javax.swing.JLabel();
-        a88 = new javax.swing.JLabel();
-        a89 = new javax.swing.JLabel();
-        a90 = new javax.swing.JLabel();
-        a91 = new javax.swing.JLabel();
-        a92 = new javax.swing.JLabel();
-        a93 = new javax.swing.JLabel();
-        a94 = new javax.swing.JLabel();
-        a95 = new javax.swing.JLabel();
-        a96 = new javax.swing.JLabel();
-        a97 = new javax.swing.JLabel();
-        a98 = new javax.swing.JLabel();
-        a99 = new javax.swing.JLabel();
-        a100 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        pnlSem5 = new javax.swing.JPanel();
-        a101 = new javax.swing.JLabel();
-        a102 = new javax.swing.JLabel();
-        a103 = new javax.swing.JLabel();
-        a104 = new javax.swing.JLabel();
-        a105 = new javax.swing.JLabel();
-        a106 = new javax.swing.JLabel();
-        a107 = new javax.swing.JLabel();
-        a108 = new javax.swing.JLabel();
-        a109 = new javax.swing.JLabel();
-        a110 = new javax.swing.JLabel();
-        a111 = new javax.swing.JLabel();
-        a112 = new javax.swing.JLabel();
-        a113 = new javax.swing.JLabel();
-        a114 = new javax.swing.JLabel();
-        a115 = new javax.swing.JLabel();
-        a116 = new javax.swing.JLabel();
-        a117 = new javax.swing.JLabel();
-        a118 = new javax.swing.JLabel();
-        a119 = new javax.swing.JLabel();
-        a120 = new javax.swing.JLabel();
-        a121 = new javax.swing.JLabel();
-        a122 = new javax.swing.JLabel();
-        a123 = new javax.swing.JLabel();
-        a124 = new javax.swing.JLabel();
-        a125 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        pnlSem6 = new javax.swing.JPanel();
-        a126 = new javax.swing.JLabel();
-        a127 = new javax.swing.JLabel();
-        a128 = new javax.swing.JLabel();
-        a129 = new javax.swing.JLabel();
-        a130 = new javax.swing.JLabel();
-        a131 = new javax.swing.JLabel();
-        a132 = new javax.swing.JLabel();
-        a133 = new javax.swing.JLabel();
-        a134 = new javax.swing.JLabel();
-        a135 = new javax.swing.JLabel();
-        a136 = new javax.swing.JLabel();
-        a137 = new javax.swing.JLabel();
-        a138 = new javax.swing.JLabel();
-        a139 = new javax.swing.JLabel();
-        a140 = new javax.swing.JLabel();
-        a141 = new javax.swing.JLabel();
-        a142 = new javax.swing.JLabel();
-        a143 = new javax.swing.JLabel();
-        a144 = new javax.swing.JLabel();
-        a145 = new javax.swing.JLabel();
-        a146 = new javax.swing.JLabel();
-        a147 = new javax.swing.JLabel();
-        a148 = new javax.swing.JLabel();
-        a149 = new javax.swing.JLabel();
-        a150 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        pnlSem7 = new javax.swing.JPanel();
-        a151 = new javax.swing.JLabel();
-        a152 = new javax.swing.JLabel();
-        a153 = new javax.swing.JLabel();
-        a154 = new javax.swing.JLabel();
-        a155 = new javax.swing.JLabel();
-        a156 = new javax.swing.JLabel();
-        a157 = new javax.swing.JLabel();
-        a158 = new javax.swing.JLabel();
-        a159 = new javax.swing.JLabel();
-        a160 = new javax.swing.JLabel();
-        a161 = new javax.swing.JLabel();
-        a162 = new javax.swing.JLabel();
-        a163 = new javax.swing.JLabel();
-        a164 = new javax.swing.JLabel();
-        a165 = new javax.swing.JLabel();
-        a166 = new javax.swing.JLabel();
-        a167 = new javax.swing.JLabel();
-        a168 = new javax.swing.JLabel();
-        a169 = new javax.swing.JLabel();
-        a170 = new javax.swing.JLabel();
-        a171 = new javax.swing.JLabel();
-        a172 = new javax.swing.JLabel();
-        a173 = new javax.swing.JLabel();
-        a174 = new javax.swing.JLabel();
-        a175 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        pnlSem8 = new javax.swing.JPanel();
-        a176 = new javax.swing.JLabel();
-        a177 = new javax.swing.JLabel();
-        a178 = new javax.swing.JLabel();
-        a179 = new javax.swing.JLabel();
-        a180 = new javax.swing.JLabel();
-        a181 = new javax.swing.JLabel();
-        a182 = new javax.swing.JLabel();
-        a183 = new javax.swing.JLabel();
-        a184 = new javax.swing.JLabel();
-        a185 = new javax.swing.JLabel();
-        a186 = new javax.swing.JLabel();
-        a187 = new javax.swing.JLabel();
-        a188 = new javax.swing.JLabel();
-        a189 = new javax.swing.JLabel();
-        a190 = new javax.swing.JLabel();
-        a191 = new javax.swing.JLabel();
-        a192 = new javax.swing.JLabel();
-        a193 = new javax.swing.JLabel();
-        a194 = new javax.swing.JLabel();
-        a195 = new javax.swing.JLabel();
-        a196 = new javax.swing.JLabel();
-        a197 = new javax.swing.JLabel();
-        a198 = new javax.swing.JLabel();
-        a199 = new javax.swing.JLabel();
-        a200 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        pnlSem9 = new javax.swing.JPanel();
-        a201 = new javax.swing.JLabel();
-        a202 = new javax.swing.JLabel();
-        a203 = new javax.swing.JLabel();
-        a204 = new javax.swing.JLabel();
-        a205 = new javax.swing.JLabel();
-        a206 = new javax.swing.JLabel();
-        a207 = new javax.swing.JLabel();
-        a208 = new javax.swing.JLabel();
-        a209 = new javax.swing.JLabel();
-        a210 = new javax.swing.JLabel();
-        a211 = new javax.swing.JLabel();
-        a212 = new javax.swing.JLabel();
-        a213 = new javax.swing.JLabel();
-        a214 = new javax.swing.JLabel();
-        a215 = new javax.swing.JLabel();
-        a216 = new javax.swing.JLabel();
-        a217 = new javax.swing.JLabel();
-        a218 = new javax.swing.JLabel();
-        a219 = new javax.swing.JLabel();
-        a220 = new javax.swing.JLabel();
-        a221 = new javax.swing.JLabel();
-        a222 = new javax.swing.JLabel();
-        a223 = new javax.swing.JLabel();
-        a224 = new javax.swing.JLabel();
-        a225 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        pnlSem10 = new javax.swing.JPanel();
-        a226 = new javax.swing.JLabel();
-        a227 = new javax.swing.JLabel();
-        a228 = new javax.swing.JLabel();
-        a229 = new javax.swing.JLabel();
-        a230 = new javax.swing.JLabel();
-        a231 = new javax.swing.JLabel();
-        a232 = new javax.swing.JLabel();
-        a233 = new javax.swing.JLabel();
-        a234 = new javax.swing.JLabel();
-        a235 = new javax.swing.JLabel();
-        a236 = new javax.swing.JLabel();
-        a237 = new javax.swing.JLabel();
-        a238 = new javax.swing.JLabel();
-        a239 = new javax.swing.JLabel();
-        a240 = new javax.swing.JLabel();
-        a241 = new javax.swing.JLabel();
-        a242 = new javax.swing.JLabel();
-        a243 = new javax.swing.JLabel();
-        a244 = new javax.swing.JLabel();
-        a245 = new javax.swing.JLabel();
-        a246 = new javax.swing.JLabel();
-        a247 = new javax.swing.JLabel();
-        a248 = new javax.swing.JLabel();
-        a249 = new javax.swing.JLabel();
-        a250 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        tablaTabs.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         pnlSem1.setLayout(null);
 
-        a1.setText("a1");
+        a1.setEditable(false);
+        a1.setColumns(20);
+        a1.setRows(5);
+        a1.setBorder(null);
+        a1.setOpaque(false);
         pnlSem1.add(a1);
-        a1.setBounds(180, 100, 100, 50);
+        a1.setBounds(180, 80, 100, 40);
 
-        a2.setText("a1");
+        a2.setEditable(false);
+        a2.setColumns(20);
+        a2.setRows(5);
+        a2.setBorder(null);
+        a2.setOpaque(false);
         pnlSem1.add(a2);
-        a2.setBounds(290, 100, 100, 50);
+        a2.setBounds(290, 80, 100, 40);
 
-        a3.setText("a1");
+        a3.setEditable(false);
+        a3.setColumns(20);
+        a3.setRows(5);
+        a3.setBorder(null);
+        a3.setOpaque(false);
         pnlSem1.add(a3);
-        a3.setBounds(400, 100, 100, 50);
+        a3.setBounds(400, 80, 100, 40);
 
-        a4.setText("a1");
+        a4.setEditable(false);
+        a4.setColumns(20);
+        a4.setRows(5);
+        a4.setBorder(null);
+        a4.setOpaque(false);
         pnlSem1.add(a4);
-        a4.setBounds(500, 100, 100, 50);
+        a4.setBounds(500, 80, 100, 40);
 
-        a5.setText("a1");
+        a5.setEditable(false);
+        a5.setColumns(20);
+        a5.setRows(5);
+        a5.setBorder(null);
+        a5.setOpaque(false);
         pnlSem1.add(a5);
-        a5.setBounds(610, 100, 100, 50);
+        a5.setBounds(610, 80, 100, 40);
 
-        a6.setText("a1");
+        a6.setEditable(false);
+        a6.setColumns(20);
+        a6.setRows(5);
+        a6.setBorder(null);
+        a6.setOpaque(false);
         pnlSem1.add(a6);
-        a6.setBounds(180, 150, 100, 50);
+        a6.setBounds(180, 130, 100, 40);
 
-        a7.setText("a1");
+        a7.setEditable(false);
+        a7.setColumns(20);
+        a7.setRows(5);
+        a7.setBorder(null);
+        a7.setOpaque(false);
         pnlSem1.add(a7);
-        a7.setBounds(290, 150, 100, 50);
+        a7.setBounds(290, 130, 100, 40);
 
-        a8.setText("a1");
+        a8.setEditable(false);
+        a8.setColumns(20);
+        a8.setRows(5);
+        a8.setBorder(null);
+        a8.setOpaque(false);
         pnlSem1.add(a8);
-        a8.setBounds(400, 150, 100, 50);
+        a8.setBounds(400, 130, 100, 40);
 
-        a9.setText("a1");
+        a9.setEditable(false);
+        a9.setColumns(20);
+        a9.setRows(5);
+        a9.setBorder(null);
+        a9.setOpaque(false);
         pnlSem1.add(a9);
-        a9.setBounds(500, 150, 100, 50);
+        a9.setBounds(500, 130, 100, 40);
 
-        a10.setText("a1");
+        a10.setEditable(false);
+        a10.setColumns(20);
+        a10.setRows(5);
+        a10.setBorder(null);
+        a10.setOpaque(false);
         pnlSem1.add(a10);
-        a10.setBounds(610, 150, 100, 50);
+        a10.setBounds(610, 130, 100, 40);
 
-        a11.setText("a1");
+        a11.setEditable(false);
+        a11.setColumns(20);
+        a11.setRows(5);
+        a11.setBorder(null);
+        a11.setOpaque(false);
         pnlSem1.add(a11);
-        a11.setBounds(180, 200, 100, 50);
+        a11.setBounds(180, 180, 100, 40);
 
-        a12.setText("a1");
+        a12.setEditable(false);
+        a12.setColumns(20);
+        a12.setRows(5);
+        a12.setBorder(null);
+        a12.setOpaque(false);
         pnlSem1.add(a12);
-        a12.setBounds(290, 200, 100, 50);
+        a12.setBounds(290, 180, 100, 40);
 
-        a13.setText("a1");
+        a13.setEditable(false);
+        a13.setColumns(20);
+        a13.setRows(5);
+        a13.setBorder(null);
+        a13.setOpaque(false);
         pnlSem1.add(a13);
-        a13.setBounds(400, 200, 100, 50);
+        a13.setBounds(400, 180, 100, 40);
 
-        a14.setText("a1");
+        a14.setEditable(false);
+        a14.setColumns(20);
+        a14.setRows(5);
+        a14.setBorder(null);
+        a14.setOpaque(false);
         pnlSem1.add(a14);
-        a14.setBounds(500, 200, 110, 50);
+        a14.setBounds(500, 180, 100, 40);
 
-        a15.setText("a1");
+        a15.setEditable(false);
+        a15.setColumns(20);
+        a15.setRows(5);
+        a15.setBorder(null);
+        a15.setOpaque(false);
         pnlSem1.add(a15);
-        a15.setBounds(610, 200, 100, 50);
+        a15.setBounds(610, 180, 100, 40);
 
-        a16.setText("a1");
+        a16.setEditable(false);
+        a16.setColumns(20);
+        a16.setRows(5);
+        a16.setBorder(null);
+        a16.setOpaque(false);
         pnlSem1.add(a16);
-        a16.setBounds(180, 250, 110, 50);
+        a16.setBounds(180, 230, 100, 40);
 
-        a17.setText("a1");
+        a17.setEditable(false);
+        a17.setColumns(20);
+        a17.setRows(5);
+        a17.setBorder(null);
+        a17.setOpaque(false);
         pnlSem1.add(a17);
-        a17.setBounds(290, 250, 100, 50);
+        a17.setBounds(290, 230, 100, 40);
 
-        a18.setText("a1");
+        a18.setEditable(false);
+        a18.setColumns(20);
+        a18.setRows(5);
+        a18.setBorder(null);
+        a18.setOpaque(false);
         pnlSem1.add(a18);
-        a18.setBounds(400, 250, 100, 50);
+        a18.setBounds(400, 230, 100, 40);
 
-        a19.setText("a1");
+        a19.setEditable(false);
+        a19.setColumns(20);
+        a19.setRows(5);
+        a19.setBorder(null);
+        a19.setOpaque(false);
         pnlSem1.add(a19);
-        a19.setBounds(500, 250, 110, 50);
+        a19.setBounds(500, 230, 100, 40);
 
-        a20.setText("a1");
+        a20.setEditable(false);
+        a20.setColumns(20);
+        a20.setRows(5);
+        a20.setBorder(null);
+        a20.setOpaque(false);
         pnlSem1.add(a20);
-        a20.setBounds(610, 250, 100, 50);
+        a20.setBounds(610, 230, 100, 40);
 
-        a21.setText("a1");
+        a21.setEditable(false);
+        a21.setColumns(20);
+        a21.setRows(5);
+        a21.setBorder(null);
+        a21.setOpaque(false);
         pnlSem1.add(a21);
-        a21.setBounds(180, 300, 110, 50);
+        a21.setBounds(180, 280, 100, 40);
 
-        a22.setText("a1");
+        a22.setEditable(false);
+        a22.setColumns(20);
+        a22.setRows(5);
+        a22.setBorder(null);
+        a22.setOpaque(false);
         pnlSem1.add(a22);
-        a22.setBounds(290, 300, 100, 50);
+        a22.setBounds(290, 280, 100, 40);
 
-        a23.setText("a1");
+        a23.setEditable(false);
+        a23.setColumns(20);
+        a23.setRows(5);
+        a23.setBorder(null);
+        a23.setOpaque(false);
         pnlSem1.add(a23);
-        a23.setBounds(400, 300, 100, 50);
+        a23.setBounds(400, 280, 100, 40);
 
-        a24.setText("a1");
+        a24.setEditable(false);
+        a24.setColumns(20);
+        a24.setRows(5);
+        a24.setBorder(null);
+        a24.setOpaque(false);
         pnlSem1.add(a24);
-        a24.setBounds(500, 300, 110, 50);
+        a24.setBounds(500, 280, 100, 40);
 
-        a25.setText("a1");
+        a25.setEditable(false);
+        a25.setColumns(20);
+        a25.setRows(5);
+        a25.setBorder(null);
+        a25.setOpaque(false);
         pnlSem1.add(a25);
-        a25.setBounds(610, 300, 100, 50);
+        a25.setBounds(610, 280, 100, 40);
+
+        a26.setEditable(false);
+        a26.setColumns(20);
+        a26.setRows(5);
+        a26.setBorder(null);
+        a26.setOpaque(false);
+        pnlSem1.add(a26);
+        a26.setBounds(180, 330, 100, 40);
+
+        a27.setEditable(false);
+        a27.setColumns(20);
+        a27.setRows(5);
+        a27.setBorder(null);
+        a27.setOpaque(false);
+        pnlSem1.add(a27);
+        a27.setBounds(290, 330, 100, 40);
+
+        a28.setEditable(false);
+        a28.setColumns(20);
+        a28.setRows(5);
+        a28.setBorder(null);
+        a28.setOpaque(false);
+        pnlSem1.add(a28);
+        a28.setBounds(400, 330, 100, 40);
+
+        a29.setEditable(false);
+        a29.setColumns(20);
+        a29.setRows(5);
+        a29.setBorder(null);
+        a29.setOpaque(false);
+        pnlSem1.add(a29);
+        a29.setBounds(500, 330, 100, 40);
+
+        a30.setEditable(false);
+        a30.setColumns(20);
+        a30.setRows(5);
+        a30.setBorder(null);
+        a30.setOpaque(false);
+        pnlSem1.add(a30);
+        a30.setBounds(610, 330, 100, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
         pnlSem1.add(jLabel1);
         jLabel1.setBounds(20, 0, 760, 420);
 
-        jTabbedPane1.addTab("Semestre 1", pnlSem1);
+        tablaTabs.addTab("Semestre 1", pnlSem1);
 
-        pnlSem2.setLayout(null);
-
-        a26.setText("a1");
-        pnlSem2.add(a26);
-        a26.setBounds(180, 100, 100, 50);
-
-        a27.setText("a1");
-        pnlSem2.add(a27);
-        a27.setBounds(290, 100, 100, 50);
-
-        a28.setText("a1");
-        pnlSem2.add(a28);
-        a28.setBounds(400, 100, 100, 50);
-
-        a29.setText("a1");
-        pnlSem2.add(a29);
-        a29.setBounds(500, 100, 100, 50);
-
-        a30.setText("a1");
-        pnlSem2.add(a30);
-        a30.setBounds(610, 100, 100, 50);
-
-        a31.setText("a1");
-        pnlSem2.add(a31);
-        a31.setBounds(180, 150, 100, 50);
-
-        a32.setText("a1");
-        pnlSem2.add(a32);
-        a32.setBounds(290, 150, 100, 50);
-
-        a33.setText("a1");
-        pnlSem2.add(a33);
-        a33.setBounds(400, 150, 100, 50);
-
-        a34.setText("a1");
-        pnlSem2.add(a34);
-        a34.setBounds(500, 150, 100, 50);
-
-        a35.setText("a1");
-        pnlSem2.add(a35);
-        a35.setBounds(610, 150, 100, 50);
-
-        a36.setText("a1");
-        pnlSem2.add(a36);
-        a36.setBounds(180, 200, 100, 50);
-
-        a37.setText("a1");
-        pnlSem2.add(a37);
-        a37.setBounds(290, 200, 100, 50);
-
-        a38.setText("a1");
-        pnlSem2.add(a38);
-        a38.setBounds(400, 200, 100, 50);
-
-        a39.setText("a1");
-        pnlSem2.add(a39);
-        a39.setBounds(500, 200, 110, 50);
-
-        a40.setText("a1");
-        pnlSem2.add(a40);
-        a40.setBounds(610, 200, 100, 50);
-
-        a41.setText("a1");
-        pnlSem2.add(a41);
-        a41.setBounds(180, 250, 110, 50);
-
-        a42.setText("a1");
-        pnlSem2.add(a42);
-        a42.setBounds(290, 250, 100, 50);
-
-        a43.setText("a1");
-        pnlSem2.add(a43);
-        a43.setBounds(400, 250, 100, 50);
-
-        a44.setText("a1");
-        pnlSem2.add(a44);
-        a44.setBounds(500, 250, 110, 50);
-
-        a45.setText("a1");
-        pnlSem2.add(a45);
-        a45.setBounds(610, 250, 100, 50);
-
-        a46.setText("a1");
-        pnlSem2.add(a46);
-        a46.setBounds(180, 300, 110, 50);
-
-        a47.setText("a1");
-        pnlSem2.add(a47);
-        a47.setBounds(290, 300, 100, 50);
-
-        a48.setText("a1");
-        pnlSem2.add(a48);
-        a48.setBounds(400, 300, 100, 50);
-
-        a49.setText("a1");
-        pnlSem2.add(a49);
-        a49.setBounds(500, 300, 110, 50);
-
-        a50.setText("a1");
-        pnlSem2.add(a50);
-        a50.setBounds(610, 300, 100, 50);
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem2.add(jLabel11);
-        jLabel11.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem2);
-
-        pnlSem3.setLayout(null);
-
-        a51.setText("a1");
-        pnlSem3.add(a51);
-        a51.setBounds(180, 100, 100, 50);
-
-        a52.setText("a1");
-        pnlSem3.add(a52);
-        a52.setBounds(290, 100, 100, 50);
-
-        a53.setText("a1");
-        pnlSem3.add(a53);
-        a53.setBounds(400, 100, 100, 50);
-
-        a54.setText("a1");
-        pnlSem3.add(a54);
-        a54.setBounds(500, 100, 100, 50);
-
-        a55.setText("a1");
-        pnlSem3.add(a55);
-        a55.setBounds(610, 100, 100, 50);
-
-        a56.setText("a1");
-        pnlSem3.add(a56);
-        a56.setBounds(180, 150, 100, 50);
-
-        a57.setText("a1");
-        pnlSem3.add(a57);
-        a57.setBounds(290, 150, 100, 50);
-
-        a58.setText("a1");
-        pnlSem3.add(a58);
-        a58.setBounds(400, 150, 100, 50);
-
-        a59.setText("a1");
-        pnlSem3.add(a59);
-        a59.setBounds(500, 150, 100, 50);
-
-        a60.setText("a1");
-        pnlSem3.add(a60);
-        a60.setBounds(610, 150, 100, 50);
-
-        a61.setText("a1");
-        pnlSem3.add(a61);
-        a61.setBounds(180, 200, 100, 50);
-
-        a62.setText("a1");
-        pnlSem3.add(a62);
-        a62.setBounds(290, 200, 100, 50);
-
-        a63.setText("a1");
-        pnlSem3.add(a63);
-        a63.setBounds(400, 200, 100, 50);
-
-        a64.setText("a1");
-        pnlSem3.add(a64);
-        a64.setBounds(500, 200, 110, 50);
-
-        a65.setText("a1");
-        pnlSem3.add(a65);
-        a65.setBounds(610, 200, 100, 50);
-
-        a66.setText("a1");
-        pnlSem3.add(a66);
-        a66.setBounds(180, 250, 110, 50);
-
-        a67.setText("a1");
-        pnlSem3.add(a67);
-        a67.setBounds(290, 250, 100, 50);
-
-        a68.setText("a1");
-        pnlSem3.add(a68);
-        a68.setBounds(400, 250, 100, 50);
-
-        a69.setText("a1");
-        pnlSem3.add(a69);
-        a69.setBounds(500, 250, 110, 50);
-
-        a70.setText("a1");
-        pnlSem3.add(a70);
-        a70.setBounds(610, 250, 100, 50);
-
-        a71.setText("a1");
-        pnlSem3.add(a71);
-        a71.setBounds(180, 300, 110, 50);
-
-        a72.setText("a1");
-        pnlSem3.add(a72);
-        a72.setBounds(290, 300, 100, 50);
-
-        a73.setText("a1");
-        pnlSem3.add(a73);
-        a73.setBounds(400, 300, 100, 50);
-
-        a74.setText("a1");
-        pnlSem3.add(a74);
-        a74.setBounds(500, 300, 110, 50);
-
-        a75.setText("a1");
-        pnlSem3.add(a75);
-        a75.setBounds(610, 300, 100, 50);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem3.add(jLabel12);
-        jLabel12.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem3);
-
-        pnlSem4.setLayout(null);
-
-        a76.setText("a1");
-        pnlSem4.add(a76);
-        a76.setBounds(180, 100, 100, 50);
-
-        a77.setText("a1");
-        pnlSem4.add(a77);
-        a77.setBounds(290, 100, 100, 50);
-
-        a78.setText("a1");
-        pnlSem4.add(a78);
-        a78.setBounds(400, 100, 100, 50);
-
-        a79.setText("a1");
-        pnlSem4.add(a79);
-        a79.setBounds(500, 100, 100, 50);
-
-        a80.setText("a1");
-        pnlSem4.add(a80);
-        a80.setBounds(610, 100, 100, 50);
-
-        a81.setText("a1");
-        pnlSem4.add(a81);
-        a81.setBounds(180, 150, 100, 50);
-
-        a82.setText("a1");
-        pnlSem4.add(a82);
-        a82.setBounds(290, 150, 100, 50);
-
-        a83.setText("a1");
-        pnlSem4.add(a83);
-        a83.setBounds(400, 150, 100, 50);
-
-        a84.setText("a1");
-        pnlSem4.add(a84);
-        a84.setBounds(500, 150, 100, 50);
-
-        a85.setText("a1");
-        pnlSem4.add(a85);
-        a85.setBounds(610, 150, 100, 50);
-
-        a86.setText("a1");
-        pnlSem4.add(a86);
-        a86.setBounds(180, 200, 100, 50);
-
-        a87.setText("a1");
-        pnlSem4.add(a87);
-        a87.setBounds(290, 200, 100, 50);
-
-        a88.setText("a1");
-        pnlSem4.add(a88);
-        a88.setBounds(400, 200, 100, 50);
-
-        a89.setText("a1");
-        pnlSem4.add(a89);
-        a89.setBounds(500, 200, 110, 50);
-
-        a90.setText("a1");
-        pnlSem4.add(a90);
-        a90.setBounds(610, 200, 100, 50);
-
-        a91.setText("a1");
-        pnlSem4.add(a91);
-        a91.setBounds(180, 250, 110, 50);
-
-        a92.setText("a1");
-        pnlSem4.add(a92);
-        a92.setBounds(290, 250, 100, 50);
-
-        a93.setText("a1");
-        pnlSem4.add(a93);
-        a93.setBounds(400, 250, 100, 50);
-
-        a94.setText("a1");
-        pnlSem4.add(a94);
-        a94.setBounds(500, 250, 110, 50);
-
-        a95.setText("a1");
-        pnlSem4.add(a95);
-        a95.setBounds(610, 250, 100, 50);
-
-        a96.setText("a1");
-        pnlSem4.add(a96);
-        a96.setBounds(180, 300, 110, 50);
-
-        a97.setText("a1");
-        pnlSem4.add(a97);
-        a97.setBounds(290, 300, 100, 50);
-
-        a98.setText("a1");
-        pnlSem4.add(a98);
-        a98.setBounds(400, 300, 100, 50);
-
-        a99.setText("a1");
-        pnlSem4.add(a99);
-        a99.setBounds(500, 300, 110, 50);
-
-        a100.setText("a1");
-        pnlSem4.add(a100);
-        a100.setBounds(610, 300, 100, 50);
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem4.add(jLabel13);
-        jLabel13.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem4);
-
-        pnlSem5.setLayout(null);
-
-        a101.setText("a1");
-        pnlSem5.add(a101);
-        a101.setBounds(180, 100, 100, 50);
-
-        a102.setText("a1");
-        pnlSem5.add(a102);
-        a102.setBounds(290, 100, 100, 50);
-
-        a103.setText("a1");
-        pnlSem5.add(a103);
-        a103.setBounds(400, 100, 100, 50);
-
-        a104.setText("a1");
-        pnlSem5.add(a104);
-        a104.setBounds(500, 100, 100, 50);
-
-        a105.setText("a1");
-        pnlSem5.add(a105);
-        a105.setBounds(610, 100, 100, 50);
-
-        a106.setText("a1");
-        pnlSem5.add(a106);
-        a106.setBounds(180, 150, 100, 50);
-
-        a107.setText("a1");
-        pnlSem5.add(a107);
-        a107.setBounds(290, 150, 100, 50);
-
-        a108.setText("a1");
-        pnlSem5.add(a108);
-        a108.setBounds(400, 150, 100, 50);
-
-        a109.setText("a1");
-        pnlSem5.add(a109);
-        a109.setBounds(500, 150, 100, 50);
-
-        a110.setText("a1");
-        pnlSem5.add(a110);
-        a110.setBounds(610, 150, 100, 50);
-
-        a111.setText("a1");
-        pnlSem5.add(a111);
-        a111.setBounds(180, 200, 100, 50);
-
-        a112.setText("a1");
-        pnlSem5.add(a112);
-        a112.setBounds(290, 200, 100, 50);
-
-        a113.setText("a1");
-        pnlSem5.add(a113);
-        a113.setBounds(400, 200, 100, 50);
-
-        a114.setText("a1");
-        pnlSem5.add(a114);
-        a114.setBounds(500, 200, 110, 50);
-
-        a115.setText("a1");
-        pnlSem5.add(a115);
-        a115.setBounds(610, 200, 100, 50);
-
-        a116.setText("a1");
-        pnlSem5.add(a116);
-        a116.setBounds(180, 250, 110, 50);
-
-        a117.setText("a1");
-        pnlSem5.add(a117);
-        a117.setBounds(290, 250, 100, 50);
-
-        a118.setText("a1");
-        pnlSem5.add(a118);
-        a118.setBounds(400, 250, 100, 50);
-
-        a119.setText("a1");
-        pnlSem5.add(a119);
-        a119.setBounds(500, 250, 110, 50);
-
-        a120.setText("a1");
-        pnlSem5.add(a120);
-        a120.setBounds(610, 250, 100, 50);
-
-        a121.setText("a1");
-        pnlSem5.add(a121);
-        a121.setBounds(180, 300, 110, 50);
-
-        a122.setText("a1");
-        pnlSem5.add(a122);
-        a122.setBounds(290, 300, 100, 50);
-
-        a123.setText("a1");
-        pnlSem5.add(a123);
-        a123.setBounds(400, 300, 100, 50);
-
-        a124.setText("a1");
-        pnlSem5.add(a124);
-        a124.setBounds(500, 300, 110, 50);
-
-        a125.setText("a1");
-        pnlSem5.add(a125);
-        a125.setBounds(610, 300, 100, 50);
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem5.add(jLabel14);
-        jLabel14.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem5);
-
-        pnlSem6.setLayout(null);
-
-        a126.setText("a1");
-        pnlSem6.add(a126);
-        a126.setBounds(180, 100, 100, 50);
-
-        a127.setText("a1");
-        pnlSem6.add(a127);
-        a127.setBounds(290, 100, 100, 50);
-
-        a128.setText("a1");
-        pnlSem6.add(a128);
-        a128.setBounds(400, 100, 100, 50);
-
-        a129.setText("a1");
-        pnlSem6.add(a129);
-        a129.setBounds(500, 100, 100, 50);
-
-        a130.setText("a1");
-        pnlSem6.add(a130);
-        a130.setBounds(610, 100, 100, 50);
-
-        a131.setText("a1");
-        pnlSem6.add(a131);
-        a131.setBounds(180, 150, 100, 50);
-
-        a132.setText("a1");
-        pnlSem6.add(a132);
-        a132.setBounds(290, 150, 100, 50);
-
-        a133.setText("a1");
-        pnlSem6.add(a133);
-        a133.setBounds(400, 150, 100, 50);
-
-        a134.setText("a1");
-        pnlSem6.add(a134);
-        a134.setBounds(500, 150, 100, 50);
-
-        a135.setText("a1");
-        pnlSem6.add(a135);
-        a135.setBounds(610, 150, 100, 50);
-
-        a136.setText("a1");
-        pnlSem6.add(a136);
-        a136.setBounds(180, 200, 100, 50);
-
-        a137.setText("a1");
-        pnlSem6.add(a137);
-        a137.setBounds(290, 200, 100, 50);
-
-        a138.setText("a1");
-        pnlSem6.add(a138);
-        a138.setBounds(400, 200, 100, 50);
-
-        a139.setText("a1");
-        pnlSem6.add(a139);
-        a139.setBounds(500, 200, 110, 50);
-
-        a140.setText("a1");
-        pnlSem6.add(a140);
-        a140.setBounds(610, 200, 100, 50);
-
-        a141.setText("a1");
-        pnlSem6.add(a141);
-        a141.setBounds(180, 250, 110, 50);
-
-        a142.setText("a1");
-        pnlSem6.add(a142);
-        a142.setBounds(290, 250, 100, 50);
-
-        a143.setText("a1");
-        pnlSem6.add(a143);
-        a143.setBounds(400, 250, 100, 50);
-
-        a144.setText("a1");
-        pnlSem6.add(a144);
-        a144.setBounds(500, 250, 110, 50);
-
-        a145.setText("a1");
-        pnlSem6.add(a145);
-        a145.setBounds(610, 250, 100, 50);
-
-        a146.setText("a1");
-        pnlSem6.add(a146);
-        a146.setBounds(180, 300, 110, 50);
-
-        a147.setText("a1");
-        pnlSem6.add(a147);
-        a147.setBounds(290, 300, 100, 50);
-
-        a148.setText("a1");
-        pnlSem6.add(a148);
-        a148.setBounds(400, 300, 100, 50);
-
-        a149.setText("a1");
-        pnlSem6.add(a149);
-        a149.setBounds(500, 300, 110, 50);
-
-        a150.setText("a1");
-        pnlSem6.add(a150);
-        a150.setBounds(610, 300, 100, 50);
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem6.add(jLabel15);
-        jLabel15.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem6);
-
-        pnlSem7.setLayout(null);
-
-        a151.setText("a1");
-        pnlSem7.add(a151);
-        a151.setBounds(180, 100, 100, 50);
-
-        a152.setText("a1");
-        pnlSem7.add(a152);
-        a152.setBounds(290, 100, 100, 50);
-
-        a153.setText("a1");
-        pnlSem7.add(a153);
-        a153.setBounds(400, 100, 100, 50);
-
-        a154.setText("a1");
-        pnlSem7.add(a154);
-        a154.setBounds(500, 100, 100, 50);
-
-        a155.setText("a1");
-        pnlSem7.add(a155);
-        a155.setBounds(610, 100, 100, 50);
-
-        a156.setText("a1");
-        pnlSem7.add(a156);
-        a156.setBounds(180, 150, 100, 50);
-
-        a157.setText("a1");
-        pnlSem7.add(a157);
-        a157.setBounds(290, 150, 100, 50);
-
-        a158.setText("a1");
-        pnlSem7.add(a158);
-        a158.setBounds(400, 150, 100, 50);
-
-        a159.setText("a1");
-        pnlSem7.add(a159);
-        a159.setBounds(500, 150, 100, 50);
-
-        a160.setText("a1");
-        pnlSem7.add(a160);
-        a160.setBounds(610, 150, 100, 50);
-
-        a161.setText("a1");
-        pnlSem7.add(a161);
-        a161.setBounds(180, 200, 100, 50);
-
-        a162.setText("a1");
-        pnlSem7.add(a162);
-        a162.setBounds(290, 200, 100, 50);
-
-        a163.setText("a1");
-        pnlSem7.add(a163);
-        a163.setBounds(400, 200, 100, 50);
-
-        a164.setText("a1");
-        pnlSem7.add(a164);
-        a164.setBounds(500, 200, 110, 50);
-
-        a165.setText("a1");
-        pnlSem7.add(a165);
-        a165.setBounds(610, 200, 100, 50);
-
-        a166.setText("a1");
-        pnlSem7.add(a166);
-        a166.setBounds(180, 250, 110, 50);
-
-        a167.setText("a1");
-        pnlSem7.add(a167);
-        a167.setBounds(290, 250, 100, 50);
-
-        a168.setText("a1");
-        pnlSem7.add(a168);
-        a168.setBounds(400, 250, 100, 50);
-
-        a169.setText("a1");
-        pnlSem7.add(a169);
-        a169.setBounds(500, 250, 110, 50);
-
-        a170.setText("a1");
-        pnlSem7.add(a170);
-        a170.setBounds(610, 250, 100, 50);
-
-        a171.setText("a1");
-        pnlSem7.add(a171);
-        a171.setBounds(180, 300, 110, 50);
-
-        a172.setText("a1");
-        pnlSem7.add(a172);
-        a172.setBounds(290, 300, 100, 50);
-
-        a173.setText("a1");
-        pnlSem7.add(a173);
-        a173.setBounds(400, 300, 100, 50);
-
-        a174.setText("a1");
-        pnlSem7.add(a174);
-        a174.setBounds(500, 300, 110, 50);
-
-        a175.setText("a1");
-        pnlSem7.add(a175);
-        a175.setBounds(610, 300, 100, 50);
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem7.add(jLabel16);
-        jLabel16.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem7);
-
-        pnlSem8.setLayout(null);
-
-        a176.setText("a1");
-        pnlSem8.add(a176);
-        a176.setBounds(180, 100, 100, 50);
-
-        a177.setText("a1");
-        pnlSem8.add(a177);
-        a177.setBounds(290, 100, 100, 50);
-
-        a178.setText("a1");
-        pnlSem8.add(a178);
-        a178.setBounds(400, 100, 100, 50);
-
-        a179.setText("a1");
-        pnlSem8.add(a179);
-        a179.setBounds(500, 100, 100, 50);
-
-        a180.setText("a1");
-        pnlSem8.add(a180);
-        a180.setBounds(610, 100, 100, 50);
-
-        a181.setText("a1");
-        pnlSem8.add(a181);
-        a181.setBounds(180, 150, 100, 50);
-
-        a182.setText("a1");
-        pnlSem8.add(a182);
-        a182.setBounds(290, 150, 100, 50);
-
-        a183.setText("a1");
-        pnlSem8.add(a183);
-        a183.setBounds(400, 150, 100, 50);
-
-        a184.setText("a1");
-        pnlSem8.add(a184);
-        a184.setBounds(500, 150, 100, 50);
-
-        a185.setText("a1");
-        pnlSem8.add(a185);
-        a185.setBounds(610, 150, 100, 50);
-
-        a186.setText("a1");
-        pnlSem8.add(a186);
-        a186.setBounds(180, 200, 100, 50);
-
-        a187.setText("a1");
-        pnlSem8.add(a187);
-        a187.setBounds(290, 200, 100, 50);
-
-        a188.setText("a1");
-        pnlSem8.add(a188);
-        a188.setBounds(400, 200, 100, 50);
-
-        a189.setText("a1");
-        pnlSem8.add(a189);
-        a189.setBounds(500, 200, 110, 50);
-
-        a190.setText("a1");
-        pnlSem8.add(a190);
-        a190.setBounds(610, 200, 100, 50);
-
-        a191.setText("a1");
-        pnlSem8.add(a191);
-        a191.setBounds(180, 250, 110, 50);
-
-        a192.setText("a1");
-        pnlSem8.add(a192);
-        a192.setBounds(290, 250, 100, 50);
-
-        a193.setText("a1");
-        pnlSem8.add(a193);
-        a193.setBounds(400, 250, 100, 50);
-
-        a194.setText("a1");
-        pnlSem8.add(a194);
-        a194.setBounds(500, 250, 110, 50);
-
-        a195.setText("a1");
-        pnlSem8.add(a195);
-        a195.setBounds(610, 250, 100, 50);
-
-        a196.setText("a1");
-        pnlSem8.add(a196);
-        a196.setBounds(180, 300, 110, 50);
-
-        a197.setText("a1");
-        pnlSem8.add(a197);
-        a197.setBounds(290, 300, 100, 50);
-
-        a198.setText("a1");
-        pnlSem8.add(a198);
-        a198.setBounds(400, 300, 100, 50);
-
-        a199.setText("a1");
-        pnlSem8.add(a199);
-        a199.setBounds(500, 300, 110, 50);
-
-        a200.setText("a1");
-        pnlSem8.add(a200);
-        a200.setBounds(610, 300, 100, 50);
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem8.add(jLabel17);
-        jLabel17.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem8);
-
-        pnlSem9.setLayout(null);
-
-        a201.setText("a1");
-        pnlSem9.add(a201);
-        a201.setBounds(180, 100, 100, 50);
-
-        a202.setText("a1");
-        pnlSem9.add(a202);
-        a202.setBounds(290, 100, 100, 50);
-
-        a203.setText("a1");
-        pnlSem9.add(a203);
-        a203.setBounds(400, 100, 100, 50);
-
-        a204.setText("a1");
-        pnlSem9.add(a204);
-        a204.setBounds(500, 100, 100, 50);
-
-        a205.setText("a1");
-        pnlSem9.add(a205);
-        a205.setBounds(610, 100, 100, 50);
-
-        a206.setText("a1");
-        pnlSem9.add(a206);
-        a206.setBounds(180, 150, 100, 50);
-
-        a207.setText("a1");
-        pnlSem9.add(a207);
-        a207.setBounds(290, 150, 100, 50);
-
-        a208.setText("a1");
-        pnlSem9.add(a208);
-        a208.setBounds(400, 150, 100, 50);
-
-        a209.setText("a1");
-        pnlSem9.add(a209);
-        a209.setBounds(500, 150, 100, 50);
-
-        a210.setText("a1");
-        pnlSem9.add(a210);
-        a210.setBounds(610, 150, 100, 50);
-
-        a211.setText("a1");
-        pnlSem9.add(a211);
-        a211.setBounds(180, 200, 100, 50);
-
-        a212.setText("a1");
-        pnlSem9.add(a212);
-        a212.setBounds(290, 200, 100, 50);
-
-        a213.setText("a1");
-        pnlSem9.add(a213);
-        a213.setBounds(400, 200, 100, 50);
-
-        a214.setText("a1");
-        pnlSem9.add(a214);
-        a214.setBounds(500, 200, 110, 50);
-
-        a215.setText("a1");
-        pnlSem9.add(a215);
-        a215.setBounds(610, 200, 100, 50);
-
-        a216.setText("a1");
-        pnlSem9.add(a216);
-        a216.setBounds(180, 250, 110, 50);
-
-        a217.setText("a1");
-        pnlSem9.add(a217);
-        a217.setBounds(290, 250, 100, 50);
-
-        a218.setText("a1");
-        pnlSem9.add(a218);
-        a218.setBounds(400, 250, 100, 50);
-
-        a219.setText("a1");
-        pnlSem9.add(a219);
-        a219.setBounds(500, 250, 110, 50);
-
-        a220.setText("a1");
-        pnlSem9.add(a220);
-        a220.setBounds(610, 250, 100, 50);
-
-        a221.setText("a1");
-        pnlSem9.add(a221);
-        a221.setBounds(180, 300, 110, 50);
-
-        a222.setText("a1");
-        pnlSem9.add(a222);
-        a222.setBounds(290, 300, 100, 50);
-
-        a223.setText("a1");
-        pnlSem9.add(a223);
-        a223.setBounds(400, 300, 100, 50);
-
-        a224.setText("a1");
-        pnlSem9.add(a224);
-        a224.setBounds(500, 300, 110, 50);
-
-        a225.setText("a1");
-        pnlSem9.add(a225);
-        a225.setBounds(610, 300, 100, 50);
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem9.add(jLabel18);
-        jLabel18.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem9);
-
-        pnlSem10.setLayout(null);
-
-        a226.setText("a1");
-        pnlSem10.add(a226);
-        a226.setBounds(180, 100, 100, 50);
-
-        a227.setText("a1");
-        pnlSem10.add(a227);
-        a227.setBounds(290, 100, 100, 50);
-
-        a228.setText("a1");
-        pnlSem10.add(a228);
-        a228.setBounds(400, 100, 100, 50);
-
-        a229.setText("a1");
-        pnlSem10.add(a229);
-        a229.setBounds(500, 100, 100, 50);
-
-        a230.setText("a1");
-        pnlSem10.add(a230);
-        a230.setBounds(610, 100, 100, 50);
-
-        a231.setText("a1");
-        pnlSem10.add(a231);
-        a231.setBounds(180, 150, 100, 50);
-
-        a232.setText("a1");
-        pnlSem10.add(a232);
-        a232.setBounds(290, 150, 100, 50);
-
-        a233.setText("a1");
-        pnlSem10.add(a233);
-        a233.setBounds(400, 150, 100, 50);
-
-        a234.setText("a1");
-        pnlSem10.add(a234);
-        a234.setBounds(500, 150, 100, 50);
-
-        a235.setText("a1");
-        pnlSem10.add(a235);
-        a235.setBounds(610, 150, 100, 50);
-
-        a236.setText("a1");
-        pnlSem10.add(a236);
-        a236.setBounds(180, 200, 100, 50);
-
-        a237.setText("a1");
-        pnlSem10.add(a237);
-        a237.setBounds(290, 200, 100, 50);
-
-        a238.setText("a1");
-        pnlSem10.add(a238);
-        a238.setBounds(400, 200, 100, 50);
-
-        a239.setText("a1");
-        pnlSem10.add(a239);
-        a239.setBounds(500, 200, 110, 50);
-
-        a240.setText("a1");
-        pnlSem10.add(a240);
-        a240.setBounds(610, 200, 100, 50);
-
-        a241.setText("a1");
-        pnlSem10.add(a241);
-        a241.setBounds(180, 250, 110, 50);
-
-        a242.setText("a1");
-        pnlSem10.add(a242);
-        a242.setBounds(290, 250, 100, 50);
-
-        a243.setText("a1");
-        pnlSem10.add(a243);
-        a243.setBounds(400, 250, 100, 50);
-
-        a244.setText("a1");
-        pnlSem10.add(a244);
-        a244.setBounds(500, 250, 110, 50);
-
-        a245.setText("a1");
-        pnlSem10.add(a245);
-        a245.setBounds(610, 250, 100, 50);
-
-        a246.setText("a1");
-        pnlSem10.add(a246);
-        a246.setBounds(180, 300, 110, 50);
-
-        a247.setText("a1");
-        pnlSem10.add(a247);
-        a247.setBounds(290, 300, 100, 50);
-
-        a248.setText("a1");
-        pnlSem10.add(a248);
-        a248.setBounds(400, 300, 100, 50);
-
-        a249.setText("a1");
-        pnlSem10.add(a249);
-        a249.setBounds(500, 300, 110, 50);
-
-        a250.setText("a1");
-        pnlSem10.add(a250);
-        a250.setBounds(610, 300, 100, 50);
-
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/horarioUniversidad.jpg"))); // NOI18N
-        pnlSem10.add(jLabel19);
-        jLabel19.setBounds(20, 0, 760, 420);
-
-        jTabbedPane1.addTab("Semestre 1", pnlSem10);
-
-        getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 0, 840, 460);
+        getContentPane().add(tablaTabs);
+        tablaTabs.setBounds(0, 0, 840, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cargarValores() {
-        a1.setText("<html>&ensp;&ensp;Calculoaaa-FG<br>&ensp;&ensp;MarlbenBendec</html>");
+        Component[] components = pnlSem1.getComponents();
+        List<Component> asList = Arrays.asList(components);
+        Agente resultado = memetico.ejecutar(generador, 600, 5, new RTRHorariosUniversidad(), algoritmo, evaluador, "universidad", 800);
+        ArrayList<Object> memes = resultado.getMemes();
+        for (int i = 0; i < 16; i++) {
+            int pos;
+            AsignacionHorario horario = (AsignacionHorario) memes.get(i);
+            String informacion;
+            for (int j = 0; j < horario.getFranjasHorario().size(); j++) {
+                informacion = horario.getCurso().getNombreCurso() + "-" + horario.getCurso().getGrupo();
+                pos=posicionHorario(horario.getFranjasHorario().get(j).getDia(), horario.getFranjasHorario().get(j).getHora());
+                JTextArea tmp=(JTextArea)asList.get(pos);
+                informacion+="-"+horario.getFranjasHorario().get(j).getSalon().getIdentifacador();
+                tmp.setFont(new Font("Arial", Font.PLAIN, 12));
+                if("".equals(tmp.getText())){
+                    tmp.setText(informacion);
+                }else{
+                    tmp.setText(tmp.getText()+"\n"+informacion);
+                }
+            }
+        }
+        System.out.println("VALORESSS");
+//        Agente resultado = memetico.ejecutar(generador, 600, 5, new RTRHorariosUniversidad(), algoritmo, evaluador, "universidad", 800);
+//        a1.setText("<html>&ensp;&ensp;Calculoaaa-FG<br>&ensp;&ensp;MarlbenBendec</html>");
+//        ArrayList<Object> memes = resultado.getMemes();
+//        for (int i = 0; i < memes.size(); i++) {
+//            AsignacionHorario horario=(AsignacionHorario) memes.get(i);
+//            System.out.println("Curso:"+ horario.getCurso().getNombreCurso()+"Grupo:"+horario.getCurso().getGrupo());
+//            for (int j= 0; j< horario.getFranjasHorario().size(); j++) {
+//                System.out.println("Dia"+horario.getFranjasHorario().get(j).getDia()+"Hora"+horario.getFranjasHorario().get(j).getHora());
+//            }
+//        }
+    }
+
+    public int posicionHorario(int dia, int hora) {
+        switch (hora) {
+            case 7:
+                hora = 0;
+                break;
+            case 9:
+                hora = 1;
+                break;
+            case 11:
+                hora = 2;
+                break;
+            case 14:
+                hora = 3;
+                break;
+            case 16:
+                hora = 4;
+                break;
+            case 18:
+                hora = 5;
+                break;
+        }
+        return dia + (5 * hora);
     }
 
     /**
@@ -1447,277 +459,39 @@ public class GUIHorarios extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel a1;
-    private javax.swing.JLabel a10;
-    private javax.swing.JLabel a100;
-    private javax.swing.JLabel a101;
-    private javax.swing.JLabel a102;
-    private javax.swing.JLabel a103;
-    private javax.swing.JLabel a104;
-    private javax.swing.JLabel a105;
-    private javax.swing.JLabel a106;
-    private javax.swing.JLabel a107;
-    private javax.swing.JLabel a108;
-    private javax.swing.JLabel a109;
-    private javax.swing.JLabel a11;
-    private javax.swing.JLabel a110;
-    private javax.swing.JLabel a111;
-    private javax.swing.JLabel a112;
-    private javax.swing.JLabel a113;
-    private javax.swing.JLabel a114;
-    private javax.swing.JLabel a115;
-    private javax.swing.JLabel a116;
-    private javax.swing.JLabel a117;
-    private javax.swing.JLabel a118;
-    private javax.swing.JLabel a119;
-    private javax.swing.JLabel a12;
-    private javax.swing.JLabel a120;
-    private javax.swing.JLabel a121;
-    private javax.swing.JLabel a122;
-    private javax.swing.JLabel a123;
-    private javax.swing.JLabel a124;
-    private javax.swing.JLabel a125;
-    private javax.swing.JLabel a126;
-    private javax.swing.JLabel a127;
-    private javax.swing.JLabel a128;
-    private javax.swing.JLabel a129;
-    private javax.swing.JLabel a13;
-    private javax.swing.JLabel a130;
-    private javax.swing.JLabel a131;
-    private javax.swing.JLabel a132;
-    private javax.swing.JLabel a133;
-    private javax.swing.JLabel a134;
-    private javax.swing.JLabel a135;
-    private javax.swing.JLabel a136;
-    private javax.swing.JLabel a137;
-    private javax.swing.JLabel a138;
-    private javax.swing.JLabel a139;
-    private javax.swing.JLabel a14;
-    private javax.swing.JLabel a140;
-    private javax.swing.JLabel a141;
-    private javax.swing.JLabel a142;
-    private javax.swing.JLabel a143;
-    private javax.swing.JLabel a144;
-    private javax.swing.JLabel a145;
-    private javax.swing.JLabel a146;
-    private javax.swing.JLabel a147;
-    private javax.swing.JLabel a148;
-    private javax.swing.JLabel a149;
-    private javax.swing.JLabel a15;
-    private javax.swing.JLabel a150;
-    private javax.swing.JLabel a151;
-    private javax.swing.JLabel a152;
-    private javax.swing.JLabel a153;
-    private javax.swing.JLabel a154;
-    private javax.swing.JLabel a155;
-    private javax.swing.JLabel a156;
-    private javax.swing.JLabel a157;
-    private javax.swing.JLabel a158;
-    private javax.swing.JLabel a159;
-    private javax.swing.JLabel a16;
-    private javax.swing.JLabel a160;
-    private javax.swing.JLabel a161;
-    private javax.swing.JLabel a162;
-    private javax.swing.JLabel a163;
-    private javax.swing.JLabel a164;
-    private javax.swing.JLabel a165;
-    private javax.swing.JLabel a166;
-    private javax.swing.JLabel a167;
-    private javax.swing.JLabel a168;
-    private javax.swing.JLabel a169;
-    private javax.swing.JLabel a17;
-    private javax.swing.JLabel a170;
-    private javax.swing.JLabel a171;
-    private javax.swing.JLabel a172;
-    private javax.swing.JLabel a173;
-    private javax.swing.JLabel a174;
-    private javax.swing.JLabel a175;
-    private javax.swing.JLabel a176;
-    private javax.swing.JLabel a177;
-    private javax.swing.JLabel a178;
-    private javax.swing.JLabel a179;
-    private javax.swing.JLabel a18;
-    private javax.swing.JLabel a180;
-    private javax.swing.JLabel a181;
-    private javax.swing.JLabel a182;
-    private javax.swing.JLabel a183;
-    private javax.swing.JLabel a184;
-    private javax.swing.JLabel a185;
-    private javax.swing.JLabel a186;
-    private javax.swing.JLabel a187;
-    private javax.swing.JLabel a188;
-    private javax.swing.JLabel a189;
-    private javax.swing.JLabel a19;
-    private javax.swing.JLabel a190;
-    private javax.swing.JLabel a191;
-    private javax.swing.JLabel a192;
-    private javax.swing.JLabel a193;
-    private javax.swing.JLabel a194;
-    private javax.swing.JLabel a195;
-    private javax.swing.JLabel a196;
-    private javax.swing.JLabel a197;
-    private javax.swing.JLabel a198;
-    private javax.swing.JLabel a199;
-    private javax.swing.JLabel a2;
-    private javax.swing.JLabel a20;
-    private javax.swing.JLabel a200;
-    private javax.swing.JLabel a201;
-    private javax.swing.JLabel a202;
-    private javax.swing.JLabel a203;
-    private javax.swing.JLabel a204;
-    private javax.swing.JLabel a205;
-    private javax.swing.JLabel a206;
-    private javax.swing.JLabel a207;
-    private javax.swing.JLabel a208;
-    private javax.swing.JLabel a209;
-    private javax.swing.JLabel a21;
-    private javax.swing.JLabel a210;
-    private javax.swing.JLabel a211;
-    private javax.swing.JLabel a212;
-    private javax.swing.JLabel a213;
-    private javax.swing.JLabel a214;
-    private javax.swing.JLabel a215;
-    private javax.swing.JLabel a216;
-    private javax.swing.JLabel a217;
-    private javax.swing.JLabel a218;
-    private javax.swing.JLabel a219;
-    private javax.swing.JLabel a22;
-    private javax.swing.JLabel a220;
-    private javax.swing.JLabel a221;
-    private javax.swing.JLabel a222;
-    private javax.swing.JLabel a223;
-    private javax.swing.JLabel a224;
-    private javax.swing.JLabel a225;
-    private javax.swing.JLabel a226;
-    private javax.swing.JLabel a227;
-    private javax.swing.JLabel a228;
-    private javax.swing.JLabel a229;
-    private javax.swing.JLabel a23;
-    private javax.swing.JLabel a230;
-    private javax.swing.JLabel a231;
-    private javax.swing.JLabel a232;
-    private javax.swing.JLabel a233;
-    private javax.swing.JLabel a234;
-    private javax.swing.JLabel a235;
-    private javax.swing.JLabel a236;
-    private javax.swing.JLabel a237;
-    private javax.swing.JLabel a238;
-    private javax.swing.JLabel a239;
-    private javax.swing.JLabel a24;
-    private javax.swing.JLabel a240;
-    private javax.swing.JLabel a241;
-    private javax.swing.JLabel a242;
-    private javax.swing.JLabel a243;
-    private javax.swing.JLabel a244;
-    private javax.swing.JLabel a245;
-    private javax.swing.JLabel a246;
-    private javax.swing.JLabel a247;
-    private javax.swing.JLabel a248;
-    private javax.swing.JLabel a249;
-    private javax.swing.JLabel a25;
-    private javax.swing.JLabel a250;
-    private javax.swing.JLabel a26;
-    private javax.swing.JLabel a27;
-    private javax.swing.JLabel a28;
-    private javax.swing.JLabel a29;
-    private javax.swing.JLabel a3;
-    private javax.swing.JLabel a30;
-    private javax.swing.JLabel a31;
-    private javax.swing.JLabel a32;
-    private javax.swing.JLabel a33;
-    private javax.swing.JLabel a34;
-    private javax.swing.JLabel a35;
-    private javax.swing.JLabel a36;
-    private javax.swing.JLabel a37;
-    private javax.swing.JLabel a38;
-    private javax.swing.JLabel a39;
-    private javax.swing.JLabel a4;
-    private javax.swing.JLabel a40;
-    private javax.swing.JLabel a41;
-    private javax.swing.JLabel a42;
-    private javax.swing.JLabel a43;
-    private javax.swing.JLabel a44;
-    private javax.swing.JLabel a45;
-    private javax.swing.JLabel a46;
-    private javax.swing.JLabel a47;
-    private javax.swing.JLabel a48;
-    private javax.swing.JLabel a49;
-    private javax.swing.JLabel a5;
-    private javax.swing.JLabel a50;
-    private javax.swing.JLabel a51;
-    private javax.swing.JLabel a52;
-    private javax.swing.JLabel a53;
-    private javax.swing.JLabel a54;
-    private javax.swing.JLabel a55;
-    private javax.swing.JLabel a56;
-    private javax.swing.JLabel a57;
-    private javax.swing.JLabel a58;
-    private javax.swing.JLabel a59;
-    private javax.swing.JLabel a6;
-    private javax.swing.JLabel a60;
-    private javax.swing.JLabel a61;
-    private javax.swing.JLabel a62;
-    private javax.swing.JLabel a63;
-    private javax.swing.JLabel a64;
-    private javax.swing.JLabel a65;
-    private javax.swing.JLabel a66;
-    private javax.swing.JLabel a67;
-    private javax.swing.JLabel a68;
-    private javax.swing.JLabel a69;
-    private javax.swing.JLabel a7;
-    private javax.swing.JLabel a70;
-    private javax.swing.JLabel a71;
-    private javax.swing.JLabel a72;
-    private javax.swing.JLabel a73;
-    private javax.swing.JLabel a74;
-    private javax.swing.JLabel a75;
-    private javax.swing.JLabel a76;
-    private javax.swing.JLabel a77;
-    private javax.swing.JLabel a78;
-    private javax.swing.JLabel a79;
-    private javax.swing.JLabel a8;
-    private javax.swing.JLabel a80;
-    private javax.swing.JLabel a81;
-    private javax.swing.JLabel a82;
-    private javax.swing.JLabel a83;
-    private javax.swing.JLabel a84;
-    private javax.swing.JLabel a85;
-    private javax.swing.JLabel a86;
-    private javax.swing.JLabel a87;
-    private javax.swing.JLabel a88;
-    private javax.swing.JLabel a89;
-    private javax.swing.JLabel a9;
-    private javax.swing.JLabel a90;
-    private javax.swing.JLabel a91;
-    private javax.swing.JLabel a92;
-    private javax.swing.JLabel a93;
-    private javax.swing.JLabel a94;
-    private javax.swing.JLabel a95;
-    private javax.swing.JLabel a96;
-    private javax.swing.JLabel a97;
-    private javax.swing.JLabel a98;
-    private javax.swing.JLabel a99;
+    private javax.swing.JTextArea a1;
+    private javax.swing.JTextArea a10;
+    private javax.swing.JTextArea a11;
+    private javax.swing.JTextArea a12;
+    private javax.swing.JTextArea a13;
+    private javax.swing.JTextArea a14;
+    private javax.swing.JTextArea a15;
+    private javax.swing.JTextArea a16;
+    private javax.swing.JTextArea a17;
+    private javax.swing.JTextArea a18;
+    private javax.swing.JTextArea a19;
+    private javax.swing.JTextArea a2;
+    private javax.swing.JTextArea a20;
+    private javax.swing.JTextArea a21;
+    private javax.swing.JTextArea a22;
+    private javax.swing.JTextArea a23;
+    private javax.swing.JTextArea a24;
+    private javax.swing.JTextArea a25;
+    private javax.swing.JTextArea a26;
+    private javax.swing.JTextArea a27;
+    private javax.swing.JTextArea a28;
+    private javax.swing.JTextArea a29;
+    private javax.swing.JTextArea a3;
+    private javax.swing.JTextArea a30;
+    private javax.swing.JTextArea a4;
+    private javax.swing.JTextArea a5;
+    private javax.swing.JTextArea a6;
+    private javax.swing.JTextArea a7;
+    private javax.swing.JTextArea a8;
+    private javax.swing.JTextArea a9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel pnlSem1;
-    private javax.swing.JPanel pnlSem10;
-    private javax.swing.JPanel pnlSem2;
-    private javax.swing.JPanel pnlSem3;
-    private javax.swing.JPanel pnlSem4;
-    private javax.swing.JPanel pnlSem5;
-    private javax.swing.JPanel pnlSem6;
-    private javax.swing.JPanel pnlSem7;
-    private javax.swing.JPanel pnlSem8;
-    private javax.swing.JPanel pnlSem9;
+    private javax.swing.JTabbedPane tablaTabs;
     // End of variables declaration//GEN-END:variables
 
 }

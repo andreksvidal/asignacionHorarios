@@ -30,7 +30,7 @@ public class AlgoritmoMemetico {
     int maxIter;
     Evaluador evaluador;
 
-    public void ejecutar(GeneradorPoblacion generador, int numPob, int tamConservar, Recombinacion tipoRecombinacion, EnfriamientoSimulado algoritmo, Evaluador evaluador, String problema,int maxIter) {
+    public Agente ejecutar(GeneradorPoblacion generador, int numPob, int tamConservar, Recombinacion tipoRecombinacion, EnfriamientoSimulado algoritmo, Evaluador evaluador, String problema,int maxIter) {
         
         this.evaluador = evaluador;
         this.tamPob = numPob;
@@ -75,7 +75,7 @@ public class AlgoritmoMemetico {
         }
 
         System.out.println("El mejor : " + poblacion.get(0).getEvaluacionAgente());
-
+        return poblacion.get(0);
     }
 
     public ArrayList<Agente> busquedaLocal(ArrayList<Agente> pobInicial, String problema) {

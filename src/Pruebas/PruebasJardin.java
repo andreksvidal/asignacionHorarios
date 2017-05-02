@@ -69,7 +69,7 @@ public class PruebasJardin {
         
         Evaluador evaluador = new EvaluadorAgenteHorarioJardin();
         EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
-        memetico.ejecutar(generador,1500, 5, new RTRHorariosJardin(), algoritmo,evaluador,"jardin",5000);
+        memetico.ejecutar(generador,1500, 90, new RTRHorariosJardin(), algoritmo,evaluador,"jardin",5000);
 
     }
 

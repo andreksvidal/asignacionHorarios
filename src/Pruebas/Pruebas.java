@@ -73,7 +73,7 @@ public class Pruebas {
        Evaluador evaluador = new EvaluadorAgenteHorario();
         EnfriamientoSimulado algoritmo = new EnfriamientoSimulado();
         memetico.ejecutar(generador, 600, 5, new RTRHorariosUniversidad(), algoritmo,evaluador,"universidad", 800);
-
+        System.out.println("");
     }
 
 }
